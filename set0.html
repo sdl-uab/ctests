@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive C-Test Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 5px 180px;
+            line-height: 2.0;
+            font-size: 20px;
+        }
+        h1 {
+            font-size: 60px;
+            color: #018539;
+            line-height: 65px;
+            font-weight: normal;
+        }
+        h2 {
+            font-size: 30px;
+            color: #000000;
+        }
+        input[type="text"] {
+            background-color: #DDEFE5;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s;
+            width: 4ch;
+        }
+        input[type="text"]:hover {
+            background-color: #b9dfc9;
+        }
+        .incorrect {
+            background-color: #FD8383 !important;
+        }
+        .correct {
+            background-color: #DDEFE5;
+        }
+        button {
+            margin-top: 5px;
+            padding: 5px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #score {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        .timer-button, .timer-display {
+            display: inline-block;
+            vertical-align: center; /* Ensure both elements align vertically */
+        }
+
+        .timer-button {
+            background-color: #018539;
+            color: white;
+            border: none;
+            padding: 0px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 5px;
+            border-radius: 5px;
+            line-height: 2.0;
+        }
+
+        .timer-display {
+            background-color: #DDEFE5;
+            padding: 0px 20px;
+            font-size: 20px;
+            border-radius: 5px;
+            line-height: 2.0;
+        }
+
+        .expired {
+            background-color: #FD8383;
+        }
+
+        a {
+            color: #b9dfc9; /* default link color */
+            text-decoration: none; /* remove underline */
+        }
+        a:hover,
+        a:visited:hover {
+            color: #04843b; /* link color on hover and when visited */
+            text-decoration: none; /* underline on hover and when visited */
+        }
+        a:visited {
+            color: #b9dfc9; /* link color when visited */
+        }
+
+        .menu-table {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 140px;
+height: 100vh; /* Full viewport height */
+overflow-y: auto; /* Enable vertical scrolling */
+overflow-x: hidden; /* Disable horizontal scrolling */
+            background-color: #ffffff;
+            z-index: 9999;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 5px; /* Rounded corners for the table */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+        }
+        .menu-table img {
+            display: block; /* Ensure the logo is block-level */
+            margin-bottom: 200px; /* Space below the logo */
+        }
+        .menu-table ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu-table li {
+            margin-bottom: 5px;
+        }
+        .menu-table a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 0px;
+            border-radius: 5px;
+            background-color: #DDEFE5;
+height: 30px; /* Adjusted to match line-height */
+line-height: 30px; /* Adjusted to match height */
+        }
+        .menu-table a:hover {
+            background-color: #b9dfc9;
+        }
+
+        /* Ensure logo link has no additional styling */
+        .menu-table a.logo-link {
+            display: inline-block;
+            padding: 0;
+            background: none;
+        }
+
+        /* Ensure logo link has no additional styling */
+        .menu-table a.logo-link {
+            display: inline-block;
+            padding: 0;
+            background: none;
+        }
+
+/* Add margin to the first link to avoid overlap with the logo */
+.menu-table ul li:first-child a {
+    margin-top: 85px; /* Adjust this value as needed */
+}
+
+    </style>
+</head><body>
+<div class="menu-table">
+<a href="https://www.uab.cat/web/uab-idiomes-campus/certificats-i-examens/descripcio-dels-examens/angles-b1-a-c1-1345819106896.html" class="logo-link">
+        <img src="logo.png" alt="Logo" width="120" style="border-radius: 5px;">
+    </a>
+    <ul>
+        <li><a href="index.html">Inici</a></li>
+        <li><a href="set1.html">Set 1</a></li>
+        <li><a href="set2.html">Set 2</a></li>
+        <li><a href="set3.html">Set 3</a></li>
+        <li><a href="set4.html">Set 4</a></li>
+        <li><a href="set5.html">Set 5</a></li>
+<li><a href="set6.html">Set 6</a></li>
+<li><a href="https://www.uab.cat/web/uab-idiomes-campus/certificats-i-examens/descripcio-dels-examens/angles-b1-a-c1-1345819106896.html">Tornar</a></li>
+    </ul>
+</div>
+<h1>Exemples de C-test (Set 0)</h1>
+
+<p>
+<div class="timer-container">
+    <button id="start-timer" class="timer-button">Start 20-minute timer</button>
+    <div id="timer-display" class="timer-display">20:00</div>
+</div>
+<p>
+C-TESTS HERE
+</p>
+    <button onclick="checkAnswers()">Check answers</button>
+    <button onclick="seeAnswers()">See answers</button>
+    <div id="score"></div>
+    
+    <script>
+        const answers = {
+TEST ANSWERS HERE
+        };
+
+        function checkAnswers() {
+            let score = 0;
+            let total = Object.keys(answers).length;
+
+            for (let key in answers) {
+                let input = document.getElementById(key);
+                if (input.value === answers[key]) {
+                    input.classList.remove("incorrect");
+                    input.classList.add("correct");
+                    score++;
+                } else {
+                    input.classList.remove("correct");
+                    input.classList.add("incorrect");
+                }
+            }
+            document.getElementById('score').innerText = `Score: ${score} out of ${total}`;
+        }
+
+        function seeAnswers() {
+            for (let key in answers) {
+                document.getElementById(key).value = answers[key];
+                document.getElementById(key).classList.remove("incorrect");
+                document.getElementById(key).classList.add("correct");
+            }
+        }
+
+// Timer logic
+    let timer;
+    let timeRemaining = 20 * 60; // 20 minutes in seconds
+
+    document.getElementById('start-timer').addEventListener('click', function() {
+        clearInterval(timer); // Clear any existing timer
+        timeRemaining = 20 * 60; // Reset the time
+        document.getElementById('start-timer').textContent = 'Time remaining';
+        document.getElementById('start-timer').classList.remove('expired');
+        document.getElementById('timer-display').classList.remove('expired');
+        updateTimerDisplay(timeRemaining);
+        timer = setInterval(() => {
+            timeRemaining--;
+            updateTimerDisplay(timeRemaining);
+            if (timeRemaining <= 0) {
+                clearInterval(timer);
+                document.getElementById('start-timer').textContent = "Time's up!";
+                document.getElementById('start-timer').classList.add('expired');
+                document.getElementById('timer-display').classList.add('expired');
+            }
+        }, 1000);
+    });
+
+    function updateTimerDisplay(time) {
+        const minutes = Math.floor(time / 60);
+        const seconds = time % 60;
+        document.getElementById('timer-display').textContent = 
+            `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    </script>
+</body>
+</html>

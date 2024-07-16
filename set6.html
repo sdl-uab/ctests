@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive C-Test Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 5px 180px;
+            line-height: 2.0;
+            font-size: 20px;
+        }
+        h1 {
+            font-size: 60px;
+            color: #018539;
+            line-height: 65px;
+            font-weight: normal;
+        }
+        h2 {
+            font-size: 30px;
+            color: #000000;
+        }
+        input[type="text"] {
+            background-color: #DDEFE5;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s;
+            width: 4ch;
+        }
+        input[type="text"]:hover {
+            background-color: #b9dfc9;
+        }
+        .incorrect {
+            background-color: #FD8383 !important;
+        }
+        .correct {
+            background-color: #DDEFE5;
+        }
+        button {
+            margin-top: 5px;
+            padding: 5px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #score {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        .timer-button, .timer-display {
+            display: inline-block;
+            vertical-align: center; /* Ensure both elements align vertically */
+        }
+
+        .timer-button {
+            background-color: #018539;
+            color: white;
+            border: none;
+            padding: 0px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 5px;
+            border-radius: 5px;
+            line-height: 2.0;
+        }
+
+        .timer-display {
+            background-color: #DDEFE5;
+            padding: 0px 20px;
+            font-size: 20px;
+            border-radius: 5px;
+            line-height: 2.0;
+        }
+
+        .expired {
+            background-color: #FD8383;
+        }
+
+        a {
+            color: #b9dfc9; /* default link color */
+            text-decoration: none; /* remove underline */
+        }
+        a:hover,
+        a:visited:hover {
+            color: #04843b; /* link color on hover and when visited */
+            text-decoration: none; /* underline on hover and when visited */
+        }
+        a:visited {
+            color: #b9dfc9; /* link color when visited */
+        }
+
+        .menu-table {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 140px;
+height: 100vh; /* Full viewport height */
+overflow-y: auto; /* Enable vertical scrolling */
+overflow-x: hidden; /* Disable horizontal scrolling */
+            background-color: #ffffff;
+            z-index: 9999;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 5px; /* Rounded corners for the table */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+        }
+        .menu-table img {
+            display: block; /* Ensure the logo is block-level */
+            margin-bottom: 200px; /* Space below the logo */
+        }
+        .menu-table ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu-table li {
+            margin-bottom: 5px;
+        }
+        .menu-table a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 0px;
+            border-radius: 5px;
+            background-color: #DDEFE5;
+height: 30px; /* Adjusted to match line-height */
+line-height: 30px; /* Adjusted to match height */
+        }
+        .menu-table a:hover {
+            background-color: #b9dfc9;
+        }
+
+        /* Ensure logo link has no additional styling */
+        .menu-table a.logo-link {
+            display: inline-block;
+            padding: 0;
+            background: none;
+        }
+
+        /* Ensure logo link has no additional styling */
+        .menu-table a.logo-link {
+            display: inline-block;
+            padding: 0;
+            background: none;
+        }
+
+/* Add margin to the first link to avoid overlap with the logo */
+.menu-table ul li:first-child a {
+    margin-top: 85px; /* Adjust this value as needed */
+}
+
+    </style>
+</head><body>
+<div class="menu-table">
+<a href="https://www.uab.cat/web/uab-idiomes-campus/certificats-i-examens/descripcio-dels-examens/angles-b1-a-c1-1345819106896.html" class="logo-link">
+        <img src="logo.png" alt="Logo" width="120" style="border-radius: 5px;">
+    </a>
+    <ul>
+        <li><a href="index.html">Inici</a></li>
+        <li><a href="set1.html">Set 1</a></li>
+        <li><a href="set2.html">Set 2</a></li>
+        <li><a href="set3.html">Set 3</a></li>
+        <li><a href="set4.html">Set 4</a></li>
+        <li><a href="set5.html">Set 5</a></li>
+<li><a href="set6.html">Set 6</a></li>
+<li><a href="https://www.uab.cat/web/uab-idiomes-campus/certificats-i-examens/descripcio-dels-examens/angles-b1-a-c1-1345819106896.html">Tornar</a></li>
+    </ul>
+</div>
+<h1>Exemples de C-test (Set 6)</h1>
+
+<p>
+<div class="timer-container">
+    <button id="start-timer" class="timer-button">Start 20-minute timer</button>
+    <div id="timer-display" class="timer-display">20:00</div>
+</div>
+    
+    <h2>1. Can you afford university?</h2>
+    <p>If you are thinking about university but worried about the cost, you are not alone. <span class="nowrap">Tuition fe<input type="text" id="test1_1"></span>, <span class="nowrap">books, a<input type="text" id="test1_2"></span> <span class="nowrap">living expe<input type="text" id="test1_3"></span> <span class="nowrap">add u<input type="text" id="test1_4"></span> quickly, <span class="nowrap">mak<input type="text" id="test1_5"></span> <span class="nowrap">higher educ<input type="text" id="test1_6"></span> <span class="nowrap">feel o<input type="text" id="test1_7"></span> <span class="nowrap">of re<input type="text" id="test1_8"></span> for <span class="nowrap">ma<input type="text" id="test1_9"></span>. <span class="nowrap">Scholarships he<input type="text" id="test1_10"></span>, but <span class="nowrap">a<input type="text" id="test1_11"></span> super <span class="nowrap">compe<input type="text" id="test1_12"></span>. <span class="nowrap">Loans? Th<input type="text" id="test1_13"></span> <span class="nowrap">can le<input type="text" id="test1_14"></span> <span class="nowrap">you wi<input type="text" id="test1_15"></span> <span class="nowrap">a moun<input type="text" id="test1_16"></span> <span class="nowrap">of de<input type="text" id="test1_17"></span>. <span class="nowrap">It i<input type="text" id="test1_18"></span> <span class="nowrap">frustrating wh<input type="text" id="test1_19"></span> <span class="nowrap">your dre<input type="text" id="test1_20"></span> <span class="nowrap">clash wi<input type="text" id="test1_21"></span> <span class="nowrap">your ba<input type="text" id="test1_22"></span> <span class="nowrap">account. B<input type="text" id="test1_23"></span> <span class="nowrap">do n<input type="text" id="test1_24"></span> <span class="nowrap">give u<input type="text" id="test1_25"></span>! There are many part-time study options and financial aid programs that can help. Keep exploring and stay determined!</p>
+    
+<h2>2. Exotic pets</h2>
+<p>Ever thought about getting an exotic pet? Sure, <span class="nowrap">hav<input type="text" id="test2_1"></span> <span class="nowrap">a sn<input type="text" id="test2_2"></span>, <span class="nowrap">parrot, o<input type="text" id="test2_3"></span> <span class="nowrap">even a ti<input type="text" id="test2_4"></span> <span class="nowrap">sounds rea<input type="text" id="test2_5"></span> <span class="nowrap">cool, b<input type="text" id="test2_6"></span> <span class="nowrap">it's n<input type="text" id="test2_7"></span> <span class="nowrap">all f<input type="text" id="test2_8"></span> <span class="nowrap">and ga<input type="text" id="test2_9"></span>. <span class="nowrap">These ani<input type="text" id="test2_10"></span> <span class="nowrap">need spe<input type="text" id="test2_11"></span> <span class="nowrap">care, di<input type="text" id="test2_12"></span>, and <span class="nowrap">enviro<input type="text" id="test2_13"></span> <span class="nowrap">that c<input type="text" id="test2_14"></span> <span class="nowrap">be tri<input type="text" id="test2_15"></span> <span class="nowrap">to man<input type="text" id="test2_16"></span>. Plus, <span class="nowrap">th<input type="text" id="test2_17"></span> <span class="nowrap">can ca<input type="text" id="test2_18"></span> <span class="nowrap">diseases th<input type="text" id="test2_19"></span> <span class="nowrap">are har<input type="text" id="test2_20"></span> <span class="nowrap">to hum<input type="text" id="test2_21"></span> <span class="nowrap">and other pe<input type="text" id="test2_22"></span>. So, <span class="nowrap">bef<input type="text" id="test2_23"></span> <span class="nowrap">you di<input type="text" id="test2_24"></span> <span class="nowrap">into t<input type="text" id="test2_25"></span> world of exotic pets, make sure you’re ready for the challenges they bring. If in doubt, seek advice from experienced exotic pet owners or professionals."</p>
+    
+<h2>3. Meeting my girlfriend</h2>
+<p>I met my girlfriend in the most unexpected way. <span class="nowrap">I w<input type="text" id="test3_1"></span> <span class="nowrap">at a cof<input type="text" id="test3_2"></span> <span class="nowrap">shop, try<input type="text" id="test3_3"></span> <span class="nowrap">to fi<input type="text" id="test3_4"></span> <span class="nowrap">a pl<input type="text" id="test3_5"></span> <span class="nowrap">to s<input type="text" id="test3_6"></span>, <span class="nowrap">when s<input type="text" id="test3_7"></span> <span class="nowrap">offered to sh<input type="text" id="test3_8"></span> <span class="nowrap">her ta<input type="text" id="test3_9"></span>. <span class="nowrap">We ju<input type="text" id="test3_10"></span> <span class="nowrap">started tal<input type="text" id="test3_11"></span> <span class="nowrap">and en<input type="text" id="test3_12"></span> <span class="nowrap">up chat<input type="text" id="test3_13"></span> <span class="nowrap">for ho<input type="text" id="test3_14"></span>. <span class="nowrap">We fo<input type="text" id="test3_15"></span> <span class="nowrap">out w<input type="text" id="test3_16"></span> <span class="nowrap">had s<input type="text" id="test3_17"></span> <span class="nowrap">much i<input type="text" id="test3_18"></span> <span class="nowrap">common, fr<input type="text" id="test3_19"></span> <span class="nowrap">our favo<input type="text" id="test3_20"></span> <span class="nowrap">books t<input type="text" id="test3_21"></span> <span class="nowrap">our lo<input type="text" id="test3_22"></span> <span class="nowrap">for hik<input type="text" id="test3_23"></span>. <span class="nowrap">In fa<input type="text" id="test3_24"></span>, <span class="nowrap">I as<input type="text" id="test3_25"></span> her out for a hike the following weekend, and the rest, as they say, is history. So, what about you? How did you meet your partner?</p>
+    
+<h2>4. Votes for teenagers</h2>
+<p>Hey, 16-year-olds! Imagine having a say in decisions that affect your future. <span class="nowrap">Giv<input type="text" id="test4_1"></span> <span class="nowrap">you t<input type="text" id="test4_2"></span> <span class="nowrap">vote me<input type="text" id="test4_3"></span> <span class="nowrap">your vo<input type="text" id="test4_4"></span> <span class="nowrap">matters ri<input type="text" id="test4_5"></span> <span class="nowrap">now, n<input type="text" id="test4_6"></span> <span class="nowrap">just la<input type="text" id="test4_7"></span>. <span class="nowrap">It i<input type="text" id="test4_8"></span> <span class="nowrap">a cha<input type="text" id="test4_9"></span> <span class="nowrap">to sh<input type="text" id="test4_10"></span> <span class="nowrap">policies o<input type="text" id="test4_11"></span> <span class="nowrap">education, cli<input type="text" id="test4_12"></span> <span class="nowrap">change, a<input type="text" id="test4_13"></span> <span class="nowrap">other iss<input type="text" id="test4_14"></span> <span class="nowrap">that imp<input type="text" id="test4_15"></span> <span class="nowrap">you dire<input type="text" id="test4_16"></span>. Plus, <span class="nowrap">vot<input type="text" id="test4_17"></span> <span class="nowrap">early bui<input type="text" id="test4_18"></span> <span class="nowrap">lifelong hab<input type="text" id="test4_19"></span> <span class="nowrap">of ci<input type="text" id="test4_20"></span> <span class="nowrap">responsibility. Coun<input type="text" id="test4_21"></span> <span class="nowrap">such a<input type="text" id="test4_22"></span> <span class="nowrap">Austria a<input type="text" id="test4_23"></span> <span class="nowrap">Scotland alr<input type="text" id="test4_24"></span> <span class="nowrap">trust you<input type="text" id="test4_25"></span> voters, seeing them as capable and informed citizens. So, let's push for a change in voting rights which is long overdue.</p>
+
+    <button onclick="checkAnswers()">Check answers</button>
+    <button onclick="seeAnswers()">See answers</button>
+    <div id="score"></div>
+    
+    <script>
+        const answers = {
+            test1_1: "es",
+            test1_2: "nd",
+            test1_3: "nses",
+            test1_4: "p",
+            test1_5: "ing",
+            test1_6: "ation",
+            test1_7: "ut",
+            test1_8: "ach",
+            test1_9: "ny",
+            test1_10: "lp",
+            test1_11: "re",
+            test1_12: "titive",
+            test1_13: "ey",
+            test1_14: "ave",
+            test1_15: "th",
+            test1_16: "tain",
+            test1_17: "bt",
+            test1_18: "s",
+            test1_19: "en",
+            test1_20: "ams",
+            test1_21: "th",
+            test1_22: "nk",
+            test1_23: "ut",
+            test1_24: "ot",
+            test1_25: "p",
+            test2_1: "ing",
+            test2_2: "ake",
+            test2_3: "r",
+            test2_4: "ger",
+            test2_5: "lly",
+            test2_6: "ut",
+            test2_7: "ot",
+            test2_8: "un",
+            test2_9: "mes",
+            test2_10: "mals",
+            test2_11: "cial",
+            test2_12: "ets",
+            test2_13: "nments",
+            test2_14: "an",
+            test2_15: "cky",
+            test2_16: "age",
+            test2_17: "ey",
+            test2_18: "rry",
+            test2_19: "at",
+            test2_20: "mful",
+            test2_21: "ans",
+            test2_22: "ts",
+            test2_23: "ore",
+            test2_24: "ve",
+            test2_25: "he",
+            test3_1: "as",
+            test3_2: "fee",
+            test3_3: "ing",
+            test3_4: "nd",
+            test3_5: "ace",
+            test3_6: "it",
+            test3_7: "he",
+            test3_8: "are",
+            test3_9: "ble",
+            test3_10: "st",
+            test3_11: "king",
+            test3_12: "ded",
+            test3_13: "ting",
+            test3_14: "urs",
+            test3_15: "und",
+            test3_16: "e",
+            test3_17: "o",
+            test3_18: "n",
+            test3_19: "om",
+            test3_20: "urite",
+            test3_21: "o",
+            test3_22: "ve",
+            test3_23: "ing",
+            test3_24: "ct",
+            test3_25: "ked",
+            test4_1: "ing",
+            test4_2: "he",
+            test4_3: "ans",
+            test4_4: "ice",
+            test4_5: "ght",
+            test4_6: "ot",
+            test4_7: "ter",
+            test4_8: "s",
+            test4_9: "nce",
+            test4_10: "ape",
+            test4_11: "n",
+            test4_12: "mate",
+            test4_13: "nd",
+            test4_14: "ues",
+            test4_15: "act",
+            test4_16: "ctly",
+            test4_17: "ing",
+            test4_18: "lds",
+            test4_19: "its",
+            test4_20: "vic",
+            test4_21: "tries",
+            test4_22: "s",
+            test4_23: "nd",
+            test4_24: "eady",
+            test4_25: "nger",
+        };
+
+        function checkAnswers() {
+            let score = 0;
+            let total = Object.keys(answers).length;
+
+            for (let key in answers) {
+                let input = document.getElementById(key);
+                if (input.value === answers[key]) {
+                    input.classList.remove("incorrect");
+                    input.classList.add("correct");
+                    score++;
+                } else {
+                    input.classList.remove("correct");
+                    input.classList.add("incorrect");
+                }
+            }
+            document.getElementById('score').innerText = `Score: ${score} out of ${total}`;
+        }
+
+        function seeAnswers() {
+            for (let key in answers) {
+                document.getElementById(key).value = answers[key];
+                document.getElementById(key).classList.remove("incorrect");
+                document.getElementById(key).classList.add("correct");
+            }
+        }
+
+// Timer logic
+    let timer;
+    let timeRemaining = 20 * 60; // 20 minutes in seconds
+
+    document.getElementById('start-timer').addEventListener('click', function() {
+        clearInterval(timer); // Clear any existing timer
+        timeRemaining = 20 * 60; // Reset the time
+        document.getElementById('start-timer').textContent = 'Time remaining';
+        document.getElementById('start-timer').classList.remove('expired');
+        document.getElementById('timer-display').classList.remove('expired');
+        updateTimerDisplay(timeRemaining);
+        timer = setInterval(() => {
+            timeRemaining--;
+            updateTimerDisplay(timeRemaining);
+            if (timeRemaining <= 0) {
+                clearInterval(timer);
+                document.getElementById('start-timer').textContent = "Time's up!";
+                document.getElementById('start-timer').classList.add('expired');
+                document.getElementById('timer-display').classList.add('expired');
+            }
+        }, 1000);
+    });
+
+    function updateTimerDisplay(time) {
+        const minutes = Math.floor(time / 60);
+        const seconds = time % 60;
+        document.getElementById('timer-display').textContent = 
+            `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    </script>
+</body>
+</html>

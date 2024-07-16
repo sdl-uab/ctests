@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive C-Test Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 5px 180px;
+            line-height: 2.0;
+            font-size: 20px;
+        }
+        h1 {
+            font-size: 60px;
+            color: #018539;
+            line-height: 65px;
+            font-weight: normal;
+        }
+        h2 {
+            font-size: 30px;
+            color: #000000;
+        }
+        input[type="text"] {
+            background-color: #DDEFE5;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s;
+            width: 4ch;
+        }
+        input[type="text"]:hover {
+            background-color: #b9dfc9;
+        }
+        .incorrect {
+            background-color: #FD8383 !important;
+        }
+        .correct {
+            background-color: #DDEFE5;
+        }
+        button {
+            margin-top: 5px;
+            padding: 5px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #score {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        .timer-button, .timer-display {
+            display: inline-block;
+            vertical-align: center; /* Ensure both elements align vertically */
+        }
+
+        .timer-button {
+            background-color: #018539;
+            color: white;
+            border: none;
+            padding: 0px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 5px;
+            border-radius: 5px;
+            line-height: 2.0;
+        }
+
+        .timer-display {
+            background-color: #DDEFE5;
+            padding: 0px 20px;
+            font-size: 20px;
+            border-radius: 5px;
+            line-height: 2.0;
+        }
+
+        .expired {
+            background-color: #FD8383;
+        }
+
+        a {
+            color: #b9dfc9; /* default link color */
+            text-decoration: none; /* remove underline */
+        }
+        a:hover,
+        a:visited:hover {
+            color: #04843b; /* link color on hover and when visited */
+            text-decoration: none; /* underline on hover and when visited */
+        }
+        a:visited {
+            color: #b9dfc9; /* link color when visited */
+        }
+
+        .menu-table {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 140px;
+height: 100vh; /* Full viewport height */
+overflow-y: auto; /* Enable vertical scrolling */
+overflow-x: hidden; /* Disable horizontal scrolling */
+            background-color: #ffffff;
+            z-index: 9999;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 5px; /* Rounded corners for the table */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+        }
+        .menu-table img {
+            display: block; /* Ensure the logo is block-level */
+            margin-bottom: 200px; /* Space below the logo */
+        }
+        .menu-table ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu-table li {
+            margin-bottom: 5px;
+        }
+        .menu-table a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 0px;
+            border-radius: 5px;
+            background-color: #DDEFE5;
+height: 30px; /* Adjusted to match line-height */
+line-height: 30px; /* Adjusted to match height */
+        }
+        .menu-table a:hover {
+            background-color: #b9dfc9;
+        }
+
+        /* Ensure logo link has no additional styling */
+        .menu-table a.logo-link {
+            display: inline-block;
+            padding: 0;
+            background: none;
+        }
+
+        /* Ensure logo link has no additional styling */
+        .menu-table a.logo-link {
+            display: inline-block;
+            padding: 0;
+            background: none;
+        }
+
+/* Add margin to the first link to avoid overlap with the logo */
+.menu-table ul li:first-child a {
+    margin-top: 85px; /* Adjust this value as needed */
+}
+
+    </style>
+</head><body>
+<div class="menu-table">
+<a href="https://www.uab.cat/web/uab-idiomes-campus/certificats-i-examens/descripcio-dels-examens/angles-b1-a-c1-1345819106896.html" class="logo-link">
+        <img src="logo.png" alt="Logo" width="120" style="border-radius: 5px;">
+    </a>
+    <ul>
+        <li><a href="index.html">Inici</a></li>
+        <li><a href="set1.html">Set 1</a></li>
+        <li><a href="set2.html">Set 2</a></li>
+        <li><a href="set3.html">Set 3</a></li>
+        <li><a href="set4.html">Set 4</a></li>
+        <li><a href="set5.html">Set 5</a></li>
+<li><a href="set6.html">Set 6</a></li>
+<li><a href="https://www.uab.cat/web/uab-idiomes-campus/certificats-i-examens/descripcio-dels-examens/angles-b1-a-c1-1345819106896.html">Tornar</a></li>
+    </ul>
+</div>
+<h1>Exemples de C-test (Set 3)</h1>
+
+<p>
+<div class="timer-container">
+    <button id="start-timer" class="timer-button">Start 20-minute timer</button>
+    <div id="timer-display" class="timer-display">20:00</div>
+</div>
+<p>
+
+<h2>1. Only children</h2>
+<p>
+The prevalence of single-child families is a growing demographic trend. This <span class="nowrap">uni<input type="text" id="test1_1"></span> childhood <span class="nowrap">exper<input type="text" id="test1_2"></span> presents <span class="nowrap">bo<input type="text" id="test1_3"></span> advantages <span class="nowrap">a<input type="text" id="test1_4"></span> challenges. <span class="nowrap">On<input type="text" id="test1_5"></span> children <span class="nowrap">of<input type="text" id="test1_6"></span> find <span class="nowrap">thems<input type="text" id="test1_7"></span> the <span class="nowrap">cen<input type="text" id="test1_8"></span> of <span class="nowrap">atte<input type="text" id="test1_9"></span> within <span class="nowrap">t<input type="text" id="test1_10"></span> home, <span class="nowrap">a<input type="text" id="test1_11"></span> they <span class="nowrap">bec<input type="text" id="test1_12"></span> the <span class="nowrap">unchal<input type="text" id="test1_13"></span> focus <span class="nowrap">o<input type="text" id="test1_14"></span> parental <span class="nowrap">lo<input type="text" id="test1_15"></span> and <span class="nowrap">reso<input type="text" id="test1_16"></span>. However, <span class="nowrap">su<input type="text" id="test1_17"></span> focused <span class="nowrap">atte<input type="text" id="test1_18"></span> can <span class="nowrap">al<input type="text" id="test1_19"></span> lead <span class="nowrap">t<input type="text" id="test1_20"></span> excessive <span class="nowrap">pres<input type="text" id="test1_21"></span> to <span class="nowrap">suc<input type="text" id="test1_22"></span> and a <span class="nowrap">fe<input type="text" id="test1_23"></span> of <span class="nowrap">disapp<input type="text" id="test1_24"></span> one's <span class="nowrap">par<input type="text" id="test1_25"></span>. Ultimately, being an only child fosters a complex and multifaceted upbringing.
+</p>
+
+<h2>2. Procrastination</h2>
+<p>
+We've all experienced it – staring at a textbook instead of actually studying its content. Suddenly, <span class="nowrap">clea<input type="text" id="test2_1"></span> your <span class="nowrap">ro<input type="text" id="test2_2"></span> or <span class="nowrap">scro<input type="text" id="test2_3"></span> through <span class="nowrap">soc<input type="text" id="test2_4"></span> media <span class="nowrap">fe<input type="text" id="test2_5"></span> infinitely <span class="nowrap">mo<input type="text" id="test2_6"></span> appealing. <span class="nowrap">S<input type="text" id="test2_7"></span> what <span class="nowrap">c<input type="text" id="test2_8"></span> we <span class="nowrap">d<input type="text" id="test2_9"></span> to <span class="nowrap">st<input type="text" id="test2_10"></span> focussed <span class="nowrap">o<input type="text" id="test2_11"></span> the <span class="nowrap">ta<input type="text" id="test2_12"></span> at <span class="nowrap">ha<input type="text" id="test2_13"></span>? Here <span class="nowrap">a<input type="text" id="test2_14"></span> a few <span class="nowrap">ti<input type="text" id="test2_15"></span>: If <span class="nowrap">some<input type="text" id="test2_16"></span> feels <span class="nowrap">overwh<input type="text" id="test2_17"></span>, break <span class="nowrap">i<input type="text" id="test2_18"></span> down <span class="nowrap">in<input type="text" id="test2_19"></span> smaller <span class="nowrap">st<input type="text" id="test2_20"></span> that <span class="nowrap">se<input type="text" id="test2_21"></span> more <span class="nowrap">manag<input type="text" id="test2_22"></span>. Try a <span class="nowrap">cha<input type="text" id="test2_23"></span> of <span class="nowrap">sce<input type="text" id="test2_24"></span> by <span class="nowrap">wor<input type="text" id="test2_25"></span> in a different room. And needless to say, silence your phone notifications.
+</p>
+
+<h2>3. Commercial breaks</h2>
+<p>
+Love them or hate them, commercial breaks are a fact of life when it comes to TV. They <span class="nowrap">a<input type="text" id="test3_1"></span> a real <span class="nowrap">pa<input type="text" id="test3_2"></span> in <span class="nowrap">t<input type="text" id="test3_3"></span> neck <span class="nowrap">wh<input type="text" id="test3_4"></span> they <span class="nowrap">inte<input type="text" id="test3_5"></span> your <span class="nowrap">favo<input type="text" id="test3_6"></span> show <span class="nowrap">t<input type="text" id="test3_7"></span> bombard <span class="nowrap">y<input type="text" id="test3_8"></span> with <span class="nowrap">infor<input type="text" id="test3_9"></span> on <span class="nowrap">t<input type="text" id="test3_10"></span> latest <span class="nowrap">gad<input type="text" id="test3_11"></span> or <span class="nowrap">gre<input type="text" id="test3_12"></span> snacks. <span class="nowrap">B<input type="text" id="test3_13"></span>, surprising <span class="nowrap">a<input type="text" id="test3_14"></span> it <span class="nowrap">m<input type="text" id="test3_15"></span> sound, <span class="nowrap">a<input type="text" id="test3_16"></span> do <span class="nowrap">ha<input type="text" id="test3_17"></span> their <span class="nowrap">ups<input type="text" id="test3_18"></span>. Commercials <span class="nowrap">thems<input type="text" id="test3_19"></span> can <span class="nowrap">b<input type="text" id="test3_20"></span> highly <span class="nowrap">entert<input type="text" id="test3_21"></span> and <span class="nowrap">of<input type="text" id="test3_22"></span> offer a <span class="nowrap">wel<input type="text" id="test3_23"></span> change <span class="nowrap">o<input type="text" id="test3_24"></span> pace <span class="nowrap">i<input type="text" id="test3_25"></span> you are watching something lengthy. They can also give you just enough time to grab a drink or go to the toilet. So, don't be too hard on ads the next time you feel like moaning about them.
+</p>
+
+<h2>4. Glastonbury Music Festival</h2>
+<p>
+Glastonbury Festival, which takes place in Somerset, England, began in 1970 and has grown into one of the world’s largest music festivals. <span class="nowrap">I<input type="text" id="test4_1"></span> is <span class="nowrap">he<input type="text" id="test4_2"></span> on <span class="nowrap">t<input type="text" id="test4_3"></span> agricultural <span class="nowrap">la<input type="text" id="test4_4"></span> of a <span class="nowrap">lo<input type="text" id="test4_5"></span> farmer <span class="nowrap">a<input type="text" id="test4_6"></span> is <span class="nowrap">atte<input type="text" id="test4_7"></span> by <span class="nowrap">aro<input type="text" id="test4_8"></span> 200,000 <span class="nowrap">peo<input type="text" id="test4_9"></span>. In <span class="nowrap">addi<input type="text" id="test4_10"></span> to <span class="nowrap">contem<input type="text" id="test4_11"></span> music, <span class="nowrap">t<input type="text" id="test4_12"></span> festival <span class="nowrap">ho<input type="text" id="test4_13"></span> dance, <span class="nowrap">the<input type="text" id="test4_14"></span>, circus, <span class="nowrap">a<input type="text" id="test4_15"></span> other <span class="nowrap">ar<input type="text" id="test4_16"></span>. The <span class="nowrap">se<input type="text" id="test4_17"></span> of <span class="nowrap">comm<input type="text" id="test4_18"></span> is <span class="nowrap">str<input type="text" id="test4_19"></span>, with <span class="nowrap">peo<input type="text" id="test4_20"></span> from <span class="nowrap">a<input type="text" id="test4_21"></span> walks <span class="nowrap">o<input type="text" id="test4_22"></span> life coming <span class="nowrap">togethe<input type="text" id="test4_23"></span> to <span class="nowrap">cele<input type="text" id="test4_24"></span> music <span class="nowrap">a<input type="text" id="test4_25"></span> culture. If you’re planning to attend for the first time, plan your schedule but be open to spontaneous adventures.
+</p>
+
+</p>
+    <button onclick="checkAnswers()">Check answers</button>
+    <button onclick="seeAnswers()">See answers</button>
+    <div id="score"></div>
+    
+    <script>
+        const answers = {
+
+        test1_1: "que",
+        test1_2: "ience",
+        test1_3: "th",
+        test1_4: "nd",
+        test1_5: "ly",
+        test1_6: "ten",
+        test1_7: "elves",
+        test1_8: "tre",
+        test1_9: "ntion",
+        test1_10: "he",
+        test1_11: "nd",
+        test1_12: "ome",
+        test1_13: "lenged",
+        test1_14: "f",
+        test1_15: "ve",
+        test1_16: "urces",
+        test1_17: "ch",
+        test1_18: "ntion",
+        test1_19: "so",
+        test1_20: "o",
+        test1_21: "sure",
+        test1_22: "ceed",
+        test1_23: "ar",
+        test1_24: "ointing",
+        test1_25: "ents",
+
+        test2_1: "ning",
+        test2_2: "om",
+        test2_3: "lling",
+        test2_4: "ial",
+        test2_5: "els",
+        test2_6: "re",
+        test2_7: "o",
+        test2_8: "an",
+        test2_9: "o",
+        test2_10: "ay",
+        test2_11: "n",
+        test2_12: "sk",
+        test2_13: "nd",
+        test2_14: "re",
+        test2_15: "ps",
+        test2_16: "thing",
+        test2_17: "whelming",
+        test2_18: "t",
+        test2_19: "to",
+        test2_20: "eps",
+        test2_21: "em",
+        test2_22: "eable",
+        test2_23: "nge",
+        test2_24: "nery",
+        test2_25: "king",
+
+        test3_1: "re",
+        test3_2: "in",
+        test3_3: "he",
+        test3_4: "en",
+        test3_5: "rrupt",
+        test3_6: "urite",
+        test3_7: "o",
+        test3_8: "ou",
+        test3_9: "mation",
+        test3_10: "he",
+        test3_11: "gets",
+        test3_12: "asy",
+        test3_13: "ut",
+        test3_14: "s",
+        test3_15: "ay",
+        test3_16: "ds",
+        test3_17: "ve",
+        test3_18: "ides",
+        test3_19: "elves",
+        test3_20: "e",
+        test3_21: "aining",
+        test3_22: "ten",
+        test3_23: "come",
+        test3_24: "f",
+        test3_25: "f",
+
+        test4_1: "t",
+        test4_2: "ld",
+        test4_3: "he",
+        test4_4: "nd",
+        test4_5: "cal",
+        test4_6: "nd",
+        test4_7: "nded",
+        test4_8: "und",
+        test4_9: "ple",
+        test4_10: "tion",
+        test4_11: "porary",
+        test4_12: "he",
+        test4_13: "sts",
+        test4_14: "atre",
+        test4_15: "nd",
+        test4_16: "ts",
+        test4_17: "nse",
+        test4_18: "unity",
+        test4_19: "ong",
+        test4_20: "ple",
+        test4_21: "ll",
+        test4_22: "f",
+        test4_23: "ther",
+        test4_24: "brate",
+        test4_25: "nd",
+
+        };
+
+        function checkAnswers() {
+            let score = 0;
+            let total = Object.keys(answers).length;
+
+            for (let key in answers) {
+                let input = document.getElementById(key);
+                if (input.value === answers[key]) {
+                    input.classList.remove("incorrect");
+                    input.classList.add("correct");
+                    score++;
+                } else {
+                    input.classList.remove("correct");
+                    input.classList.add("incorrect");
+                }
+            }
+            document.getElementById('score').innerText = `Score: ${score} out of ${total}`;
+        }
+
+        function seeAnswers() {
+            for (let key in answers) {
+                document.getElementById(key).value = answers[key];
+                document.getElementById(key).classList.remove("incorrect");
+                document.getElementById(key).classList.add("correct");
+            }
+        }
+
+// Timer logic
+    let timer;
+    let timeRemaining = 20 * 60; // 20 minutes in seconds
+
+    document.getElementById('start-timer').addEventListener('click', function() {
+        clearInterval(timer); // Clear any existing timer
+        timeRemaining = 20 * 60; // Reset the time
+        document.getElementById('start-timer').textContent = 'Time remaining';
+        document.getElementById('start-timer').classList.remove('expired');
+        document.getElementById('timer-display').classList.remove('expired');
+        updateTimerDisplay(timeRemaining);
+        timer = setInterval(() => {
+            timeRemaining--;
+            updateTimerDisplay(timeRemaining);
+            if (timeRemaining <= 0) {
+                clearInterval(timer);
+                document.getElementById('start-timer').textContent = "Time's up!";
+                document.getElementById('start-timer').classList.add('expired');
+                document.getElementById('timer-display').classList.add('expired');
+            }
+        }, 1000);
+    });
+
+    function updateTimerDisplay(time) {
+        const minutes = Math.floor(time / 60);
+        const seconds = time % 60;
+        document.getElementById('timer-display').textContent = 
+            `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    </script>
+</body>
+</html>

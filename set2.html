@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive C-Test Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 5px 180px;
+            line-height: 2.0;
+            font-size: 20px;
+        }
+        h1 {
+            font-size: 60px;
+            color: #018539;
+            line-height: 65px;
+            font-weight: normal;
+        }
+        h2 {
+            font-size: 30px;
+            color: #000000;
+        }
+        input[type="text"] {
+            background-color: #DDEFE5;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s;
+            width: 4ch;
+        }
+        input[type="text"]:hover {
+            background-color: #b9dfc9;
+        }
+        .incorrect {
+            background-color: #FD8383 !important;
+        }
+        .correct {
+            background-color: #DDEFE5;
+        }
+        button {
+            margin-top: 5px;
+            padding: 5px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #score {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        .timer-button, .timer-display {
+            display: inline-block;
+            vertical-align: center; /* Ensure both elements align vertically */
+        }
+
+        .timer-button {
+            background-color: #018539;
+            color: white;
+            border: none;
+            padding: 0px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 5px;
+            border-radius: 5px;
+            line-height: 2.0;
+        }
+
+        .timer-display {
+            background-color: #DDEFE5;
+            padding: 0px 20px;
+            font-size: 20px;
+            border-radius: 5px;
+            line-height: 2.0;
+        }
+
+        .expired {
+            background-color: #FD8383;
+        }
+
+        a {
+            color: #b9dfc9; /* default link color */
+            text-decoration: none; /* remove underline */
+        }
+        a:hover,
+        a:visited:hover {
+            color: #04843b; /* link color on hover and when visited */
+            text-decoration: none; /* underline on hover and when visited */
+        }
+        a:visited {
+            color: #b9dfc9; /* link color when visited */
+        }
+
+        .menu-table {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 140px;
+height: 100vh; /* Full viewport height */
+overflow-y: auto; /* Enable vertical scrolling */
+overflow-x: hidden; /* Disable horizontal scrolling */
+            background-color: #ffffff;
+            z-index: 9999;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 5px; /* Rounded corners for the table */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+        }
+        .menu-table img {
+            display: block; /* Ensure the logo is block-level */
+            margin-bottom: 200px; /* Space below the logo */
+        }
+        .menu-table ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu-table li {
+            margin-bottom: 5px;
+        }
+        .menu-table a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 0px;
+            border-radius: 5px;
+            background-color: #DDEFE5;
+height: 30px; /* Adjusted to match line-height */
+line-height: 30px; /* Adjusted to match height */
+        }
+        .menu-table a:hover {
+            background-color: #b9dfc9;
+        }
+
+        /* Ensure logo link has no additional styling */
+        .menu-table a.logo-link {
+            display: inline-block;
+            padding: 0;
+            background: none;
+        }
+
+        /* Ensure logo link has no additional styling */
+        .menu-table a.logo-link {
+            display: inline-block;
+            padding: 0;
+            background: none;
+        }
+
+/* Add margin to the first link to avoid overlap with the logo */
+.menu-table ul li:first-child a {
+    margin-top: 85px; /* Adjust this value as needed */
+}
+
+    </style>
+</head><body>
+<div class="menu-table">
+<a href="https://www.uab.cat/web/uab-idiomes-campus/certificats-i-examens/descripcio-dels-examens/angles-b1-a-c1-1345819106896.html" class="logo-link">
+        <img src="logo.png" alt="Logo" width="120" style="border-radius: 5px;">
+    </a>
+    <ul>
+        <li><a href="index.html">Inici</a></li>
+        <li><a href="set1.html">Set 1</a></li>
+        <li><a href="set2.html">Set 2</a></li>
+        <li><a href="set3.html">Set 3</a></li>
+        <li><a href="set4.html">Set 4</a></li>
+        <li><a href="set5.html">Set 5</a></li>
+<li><a href="set6.html">Set 6</a></li>
+<li><a href="https://www.uab.cat/web/uab-idiomes-campus/certificats-i-examens/descripcio-dels-examens/angles-b1-a-c1-1345819106896.html">Tornar</a></li>
+    </ul>
+</div>
+<h1>Exemples de C-test (Set 2)</h1>
+
+<p>
+<div class="timer-container">
+    <button id="start-timer" class="timer-button">Start 20-minute timer</button>
+    <div id="timer-display" class="timer-display">20:00</div>
+</div>
+<p>
+
+<h2>1. Female Heads of State</h2>
+<p>
+    For centuries, leadership positions at the highest levels of government were a male domain. <span class="nowrap">How<input type="text" id="test1_1"></span>, the 21st <span class="nowrap">cen<input type="text" id="test1_2"></span> is <span class="nowrap">witne<input type="text" id="test1_3"></span> a <span class="nowrap">sh<input type="text" id="test1_4"></span> increase <span class="nowrap">i<input type="text" id="test1_5"></span> the <span class="nowrap">num<input type="text" id="test1_6"></span> of <span class="nowrap">wo<input type="text" id="test1_7"></span> assuming <span class="nowrap">t<input type="text" id="test1_8"></span> role <span class="nowrap">o<input type="text" id="test1_9"></span> Head <span class="nowrap">o<input type="text" id="test1_10"></span> State. <span class="nowrap">Curr<input type="text" id="test1_11"></span>, nearly 30 <span class="nowrap">nat<input type="text" id="test1_12"></span> are <span class="nowrap">l<input type="text" id="test1_13"></span> by <span class="nowrap">wo<input type="text" id="test1_14"></span>, which <span class="nowrap">i<input type="text" id="test1_15"></span> a <span class="nowrap">signi<input type="text" id="test1_16"></span> increase <span class="nowrap">wh<input type="text" id="test1_17"></span> compared <span class="nowrap">wi<input type="text" id="test1_18"></span> just a <span class="nowrap">dec<input type="text" id="test1_19"></span> ago. <span class="nowrap">Th<input type="text" id="test1_20"></spanis rise <span class="nowrap">refl<input type="text" id="test1_21"></span> a <span class="nowrap">gro<input type="text" id="test1_22"></span> recognition <span class="nowrap">o<input type="text" id="test1_23"></span> women's <span class="nowrap">leade<input type="text" id="test1_24"></span> abilities <span class="nowrap">a<input type="text" id="test1_25"></span> a global push for gender equality. Most political analysts expect this trend to continue, paving the way for a more gender balanced future.
+</p>
+
+<h2>2. Me and my school shyness</h2>
+<p>
+    Starting a new school year always brings a mix of excitement and anxiety. For <span class="nowrap">som<input type="text" id="test2_1"></span> shy <span class="nowrap">li<input type="text" id="test2_2"></span> me, <span class="nowrap">t<input type="text" id="test2_3"></span> anxiety <span class="nowrap">of<input type="text" id="test2_4"></span> overshadows <span class="nowrap">t<input type="text" id="test2_5"></span> excitement. <span class="nowrap">Wal<input type="text" id="test2_6"></span> into a <span class="nowrap">clas<input type="text" id="test2_7"></span> full <span class="nowrap">o<input type="text" id="test2_8"></span> unfamiliar <span class="nowrap">fa<input type="text" id="test2_9"></span> can <span class="nowrap">fe<input type="text" id="test2_10"></span> overwhelming. I <span class="nowrap">of<input type="text" id="test2_11"></span> sit <span class="nowrap">qui<input type="text" id="test2_12"></span>, hoping <span class="nowrap">nob<input type="text" id="test2_13"></span> will <span class="nowrap">appr<input type="text" id="test2_14"></span> me, <span class="nowrap">a<input type="text" id="test2_15"></span> the <span class="nowrap">fe<input type="text" id="test2_16"></span> of <span class="nowrap">say<input type="text" id="test2_17"></span> the <span class="nowrap">wr<input type="text" id="test2_18"></span> thing <span class="nowrap">o<input type="text" id="test2_19"></span> being <span class="nowrap">jud<input type="text" id="test2_20"></span> keeps <span class="nowrap">m<input type="text" id="test2_21"></span> from <span class="nowrap">spea<input type="text" id="test2_22"></span> up. <span class="nowrap">Ov<input type="text" id="test2_23"></span> time, <span class="nowrap">how<input type="text" id="test2_24"></span>, I <span class="nowrap">ha<input type="text" id="test2_25"></span> learned that taking small steps, like smiling or making eye contact, can help ease the tension. Little by little, I'm getting my shyness under control.
+</p>
+
+<h2>3. The impact of influencers and streamers</h2>
+<p>
+    Influencers and streamers have a significant impact on young people. They <span class="nowrap">of<input type="text" id="test3_1"></span> serve <span class="nowrap">a<input type="text" id="test3_2"></span> role <span class="nowrap">mod<input type="text" id="test3_3"></span>, shaping <span class="nowrap">tre<input type="text" id="test3_4"></span> and <span class="nowrap">opin<input type="text" id="test3_5"></span>. Many <span class="nowrap">teen<input type="text" id="test3_6"></span> look <span class="nowrap">u<input type="text" id="test3_7"></span> to <span class="nowrap">th<input type="text" id="test3_8"></span> digital <span class="nowrap">crea<input type="text" id="test3_9"></span> for <span class="nowrap">inspi<input type="text" id="test3_10"></span> and <span class="nowrap">adv<input type="text" id="test3_11"></span>. However, <span class="nowrap">i<input type="text" id="test3_12"></span> is <span class="nowrap">impo<input type="text" id="test3_13"></span> to <span class="nowrap">reme<input type="text" id="test3_14"></span> that <span class="nowrap">soc<input type="text" id="test3_15"></span> media can <span class="nowrap">somet<input type="text" id="test3_16"></span> present <span class="nowrap">a<input type="text" id="test3_17"></span> idealized <span class="nowrap">ver<input type="text" id="test3_18"></span> of <span class="nowrap">rea<input type="text" id="test3_19"></span>, so <span class="nowrap">i<input type="text" id="test3_20"></span> is <span class="nowrap">cru<input type="text" id="test3_21"></span> to <span class="nowrap">appr<input type="text" id="test3_22"></span> content <span class="nowrap">criti<input type="text" id="test3_23"></span> and <span class="nowrap">under<input type="text" id="test3_24"></span> that <span class="nowrap">n<input type="text" id="test3_25"></span> everything you see online is genuine. Despite this, influencers and streamers can positively influence their audience by promoting creativity, self-expression, and community.
+</p>
+
+<h2>4. The origin of the tapa</h2>
+<p>
+    We all love tapas – those delicious little Spanish snacks that come in endless varieties. <span class="nowrap">B<input type="text" id="test4_1"></span> have <span class="nowrap">y<input type="text" id="test4_2"></span> ever <span class="nowrap">wond<input type="text" id="test4_3"></span> where <span class="nowrap">th<input type="text" id="test4_4"></span> tasty <span class="nowrap">trad<input type="text" id="test4_5"></span> comes <span class="nowrap">fr<input type="text" id="test4_6"></span>? The <span class="nowrap">tr<input type="text" id="test4_7"></span> is, <span class="nowrap">t<input type="text" id="test4_8"></span> origin <span class="nowrap">o<input type="text" id="test4_9"></span> the <span class="nowrap">ta<input type="text" id="test4_10"></span> is a <span class="nowrap">b<input type="text" id="test4_11"></span> of a <span class="nowrap">mys<input type="text" id="test4_12"></span>. One <span class="nowrap">the<input type="text" id="test4_13"></span> is <span class="nowrap">th<input type="text" id="test4_14"></span> during <span class="nowrap">h<input type="text" id="test4_15"></span> weather, <span class="nowrap">barte<input type="text" id="test4_16"></span> used <span class="nowrap">t<input type="text" id="test4_17"></span> cover <span class="nowrap">gla<input type="text" id="test4_18"></span> of <span class="nowrap">wi<input type="text" id="test4_19"></span> with <span class="nowrap">sli<input type="text" id="test4_20"></span> of <span class="nowrap">br<input type="text" id="test4_21"></span> or <span class="nowrap">cu<input type="text" id="test4_22"></span> meat <span class="nowrap">t<input type="text" id="test4_23"></span> keep <span class="nowrap">o<input type="text" id="test4_24"></span> annoying <span class="nowrap">fl<input type="text" id="test4_25"></span>. This "tapa", which translates to "lid" in Spanish, might have evolved into the small savoury dishes we know and love today.
+</p>
+
+
+</p>
+    <button onclick="checkAnswers()">Check answers</button>
+    <button onclick="seeAnswers()">See answers</button>
+    <div id="score"></div>
+    
+    <script>
+        const answers = {
+            test1_1: "ever",
+            test1_2: "tury",
+            test1_3: "ssing",
+            test1_4: "arp",
+            test1_5: "n",
+            test1_6: "ber",
+            test1_7: "men",
+            test1_8: "he",
+            test1_9: "f",
+            test1_10: "f",
+            test1_11: "ently",
+            test1_12: "ions",
+            test1_13: "ed",
+            test1_14: "men",
+            test1_15: "s",
+            test1_16: "ficant",
+            test1_17: "en",
+            test1_18: "th",
+            test1_19: "ade",
+            test1_20: "is",
+            test1_21: "ects",
+            test1_22: "wing",
+            test1_23: "f",
+            test1_24: "rship",
+            test1_25: "nd",
+            test2_1: "one",
+            test2_2: "ke",
+            test2_3: "he",
+            test2_4: "ten",
+            test2_5: "he",
+            test2_6: "king",
+            test2_7: "sroom",
+            test2_8: "f",
+            test2_9: "ces",
+            test2_10: "el",
+            test2_11: "ten",
+            test2_12: "etly",
+            test2_13: "ody",
+            test2_14: "oach",
+            test2_15: "nd",
+            test2_16: "ar",
+            test2_17: "ing",
+            test2_18: "ong",
+            test2_19: "r",
+            test2_20: "ged",
+            test2_21: "e",
+            test2_22: "king",
+            test2_23: "er",
+            test2_24: "ever",
+            test2_25: "ve",
+            test3_1: "ten",
+            test3_2: "s",
+            test3_3: "els",
+            test3_4: "nds",
+            test3_5: "ions",
+            test3_6: "agers",
+            test3_7: "p",
+            test3_8: "ese",
+            test3_9: "tors",
+            test3_10: "ration",
+            test3_11: "ice",
+            test3_12: "t",
+            test3_13: "rtant",
+            test3_14: "mber",
+            test3_15: "ial",
+            test3_16: "imes",
+            test3_17: "n",
+            test3_18: "sion",
+            test3_19: "lity",
+            test3_20: "t",
+            test3_21: "cial",
+            test3_22: "oach",
+            test3_23: "cally",
+            test3_24: "stand",
+            test3_25: "ot",
+            test4_1: "ut",
+            test4_2: "ou",
+            test4_3: "ered",
+            test4_4: "is",
+            test4_5: "ition",
+            test4_6: "om",
+            test4_7: "uth",
+            test4_8: "he",
+            test4_9: "f",
+            test4_10: "pa",
+            test4_11: "it",
+            test4_12: "tery",
+            test4_13: "ory",
+            test4_14: "at",
+            test4_15: "ot",
+            test4_16: "nders",
+            test4_17: "o",
+            test4_18: "sses",
+            test4_19: "ne",
+            test4_20: "ces",
+            test4_21: "ead",
+            test4_22: "red",
+            test4_23: "o",
+            test4_24: "ut",
+            test4_25: "ies"
+        };
+
+        function checkAnswers() {
+            let score = 0;
+            let total = Object.keys(answers).length;
+
+            for (let key in answers) {
+                let input = document.getElementById(key);
+                if (input.value === answers[key]) {
+                    input.classList.remove("incorrect");
+                    input.classList.add("correct");
+                    score++;
+                } else {
+                    input.classList.remove("correct");
+                    input.classList.add("incorrect");
+                }
+            }
+            document.getElementById('score').innerText = `Score: ${score} out of ${total}`;
+        }
+
+        function seeAnswers() {
+            for (let key in answers) {
+                document.getElementById(key).value = answers[key];
+                document.getElementById(key).classList.remove("incorrect");
+                document.getElementById(key).classList.add("correct");
+            }
+        }
+
+// Timer logic
+    let timer;
+    let timeRemaining = 20 * 60; // 20 minutes in seconds
+
+    document.getElementById('start-timer').addEventListener('click', function() {
+        clearInterval(timer); // Clear any existing timer
+        timeRemaining = 20 * 60; // Reset the time
+        document.getElementById('start-timer').textContent = 'Time remaining';
+        document.getElementById('start-timer').classList.remove('expired');
+        document.getElementById('timer-display').classList.remove('expired');
+        updateTimerDisplay(timeRemaining);
+        timer = setInterval(() => {
+            timeRemaining--;
+            updateTimerDisplay(timeRemaining);
+            if (timeRemaining <= 0) {
+                clearInterval(timer);
+                document.getElementById('start-timer').textContent = "Time's up!";
+                document.getElementById('start-timer').classList.add('expired');
+                document.getElementById('timer-display').classList.add('expired');
+            }
+        }, 1000);
+    });
+
+    function updateTimerDisplay(time) {
+        const minutes = Math.floor(time / 60);
+        const seconds = time % 60;
+        document.getElementById('timer-display').textContent = 
+            `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    </script>
+</body>
+</html>
