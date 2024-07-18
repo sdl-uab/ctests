@@ -32,6 +32,23 @@
             transition: background-color 0.3s;
             width: 4ch;
         }
+
+input[type="text"]#test4_2 {
+        width: 7ch; /* Specific width for input field with id test4_2 */
+    }
+
+input[type="text"]#test1_10 {
+        width: 5ch;
+    }
+
+input[type="text"]#test2_21 {
+        width: 5ch;
+    }
+
+input[type="text"]#test2_24 {
+        width: 6ch;
+    }
+
         input[type="text"]:hover {
             background-color: #b9dfc9;
         }
@@ -167,17 +184,18 @@ line-height: 30px; /* Adjusted to match height */
         <img src="logo.png" alt="Logo" width="120" style="border-radius: 5px;">
     </a>
     <ul>
-        <li><a href="index.html">Inici</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="set1.html">Set 1</a></li>
         <li><a href="set2.html">Set 2</a></li>
         <li><a href="set3.html">Set 3</a></li>
         <li><a href="set4.html">Set 4</a></li>
         <li><a href="set5.html">Set 5</a></li>
 <li><a href="set6.html">Set 6</a></li>
-<li><a href="https://www.uab.cat/web/uab-idiomes-campus/certificats-i-examens/descripcio-dels-examens/angles-b1-a-c1-1345819106896.html">Tornar</a></li>
+<li><a href="https://www.uab.cat/web/uab-idiomes-campus/certificats-i-examens/descripcio-dels-examens/angles-b1-a-c1-1345819106896.html">Idiomes UAB</a></li>
     </ul>
+
 </div>
-<h1>Exemples de C-test (Set 1)</h1>
+<h1>C-test examples (Set 1)</h1>
 
 <p>
 <div class="timer-container">
@@ -199,7 +217,7 @@ line-height: 30px; /* Adjusted to match height */
     <span class="nowrap">travel. SpaceX h<input type="text" id="test2_7"></span> 
     <span class="nowrap">earned pra<input type="text" id="test2_8"></span> 
     <span class="nowrap">for i<input type="text" id="test2_9"></span> 
-    <span class="nowrap">Falcon roc<input type="text" id="test2_10"></span>, 
+    <span class="nowrap"><i>Falcon</i> roc<input type="text" id="test2_10"></span>, 
     <span class="nowrap">which a<input type="text" id="test2_11"></span> 
     <span class="nowrap">notable f<input type="text" id="test2_12"></span> 
     <span class="nowrap">their reusa<input type="text" id="test2_13"></span>, 
@@ -307,7 +325,7 @@ line-height: 30px; /* Adjusted to match height */
         test3_24: "so",
         test3_25: "em",
         test4_1: "an",
-        test4_2: "urhoods",
+        test4_2: ["urhoods", "rhoods"],
         test4_3: "cing",
         test4_4: "nd",
         test4_5: "ness",
@@ -334,11 +352,21 @@ line-height: 30px; /* Adjusted to match height */
         };
 
         function checkAnswers() {
-            let score = 0;
-            let total = Object.keys(answers).length;
+        let score = 0;
+        let total = Object.keys(answers).length;
 
-            for (let key in answers) {
-                let input = document.getElementById(key);
+        for (let key in answers) {
+            let input = document.getElementById(key);
+            if (Array.isArray(answers[key])) {
+                if (answers[key].includes(input.value)) {
+                    input.classList.remove("incorrect");
+                    input.classList.add("correct");
+                    score++;
+                } else {
+                    input.classList.remove("correct");
+                    input.classList.add("incorrect");
+                }
+            } else {
                 if (input.value === answers[key]) {
                     input.classList.remove("incorrect");
                     input.classList.add("correct");
@@ -348,18 +376,20 @@ line-height: 30px; /* Adjusted to match height */
                     input.classList.add("incorrect");
                 }
             }
-            document.getElementById('score').innerText = `Score: ${score} out of ${total}`;
         }
+        document.getElementById('score').innerText = `Score: ${score} out of ${total}`;
+    }
 
-        function seeAnswers() {
-            for (let key in answers) {
-                document.getElementById(key).value = answers[key];
-                document.getElementById(key).classList.remove("incorrect");
-                document.getElementById(key).classList.add("correct");
-            }
+    function seeAnswers() {
+        for (let key in answers) {
+            let answer = Array.isArray(answers[key]) ? answers[key][0] : answers[key];
+            document.getElementById(key).value = answer;
+            document.getElementById(key).classList.remove("incorrect");
+            document.getElementById(key).classList.add("correct");
         }
+    }
 
-// Timer logic
+    // Timer logic
     let timer;
     let timeRemaining = 20 * 60; // 20 minutes in seconds
 
@@ -388,7 +418,7 @@ line-height: 30px; /* Adjusted to match height */
         document.getElementById('timer-display').textContent = 
             `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     }
-
-    </script>
+</script>
+<p></p>
 </body>
 </html>
