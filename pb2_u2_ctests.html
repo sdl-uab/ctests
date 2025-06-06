@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive C-Test Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px 100px 100px 100px;
+            line-height: 2.0;
+            font-size: 25px;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 16px;
+            color: #018539;
+            line-height: 5px;
+            font-weight: normal;
+        }
+
+        h2 {
+            font-size: 33px;
+            color: #506cdc;
+            margin-bottom: 0px;
+        }
+
+        input[type="text"] {
+            background-color: #FFE9C9;
+            border: none;
+            border-radius: 5px;
+            font-size: 25px;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s;
+            width: 4ch;
+        }
+
+        input[type="text"]#test4_2 {
+            width: 7ch;
+        }
+
+        input[type="text"]#test1_10,
+        input[type="text"]#test2_21,
+        input[type="text"]#test2_24 {
+            width: 5ch;
+        }
+
+        input[type="text"]:hover {
+            background-color: #FFC979;
+        }
+
+        .correct {
+            background-color: #33CC33 !important;
+        }
+
+        .incorrect {
+            background-color: #FF0000 !important;
+        }
+
+        button {
+            margin-top: 5px;
+            padding: 5px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #score {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        .timer-button, .timer-display {
+            display: inline-block;
+            vertical-align: center;
+        }
+
+        .timer-button {
+            background-color: #ff9900;
+            color: white;
+            border: none;
+            padding: 0px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 5px;
+            border-radius: 5px;
+            line-height: 2.0;
+        }
+
+        .timer-display {
+            background-color: #FFE9C9;
+            padding: 0px 20px;
+            font-size: 20px;
+            border-radius: 5px;
+            line-height: 2.0;
+        }
+
+        .expired {
+            background-color: #FD8383;
+        }
+
+        a {
+            color: #506cdc;
+            text-decoration: underline;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        a:hover,
+        a:visited:hover {
+            color: #ff9900;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        a:visited {
+            color: #506cdc;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+
+<body>
+    <a href="https://e-aules.uab.cat/2024-25/mod/page/view.php?id=128052">Back to "Unit 2 - Entertainment"</a>
+<p>
+<div class="timer-container">
+    <button id="start-timer" class="timer-button">Start 20-minute timer</button>
+    <div id="timer-display" class="timer-display">20:00</div>
+</div>
+
+
+<h2>1. Film music</h2>
+<p>
+Music is an essential element in a movie as it helps to create the right atmosphere and enhance the overall viewing experience. As <span class="nowrap">t<input type="text" id="test1_1"></span> story <span class="nowrap">unf<input type="text" id="test1_2"></span>, music <span class="nowrap">i<input type="text" id="test1_3"></span> used <span class="nowrap">t<input type="text" id="test1_4"></span> complement <span class="nowrap">t<input type="text" id="test1_5"></span> scenes <span class="nowrap">a<input type="text" id="test1_6"></span> convey <span class="nowrap">t<input type="text" id="test1_7"></span> emotions <span class="nowrap">o<input type="text" id="test1_8"></span> the <span class="nowrap">chara<input type="text" id="test1_9"></span>. A <span class="nowrap">cat<input type="text" id="test1_10"></span> soundtrack <span class="nowrap">c<input type="text" id="test1_11"></span> help <span class="nowrap">t<input type="text" id="test1_12"></span> make a <span class="nowrap">mo<input type="text" id="test1_13"></span> more <span class="nowrap">memo<input type="text" id="test1_14"></span> and <span class="nowrap">enjo<input type="text" id="test1_15"></span>. In <span class="nowrap">addi<input type="text" id="test1_16"></span>, music <span class="nowrap">al<input type="text" id="test1_17"></span> helps <span class="nowrap">t<input type="text" id="test1_18"></span> create a <span class="nowrap">se<input type="text" id="test1_19"></span> of <span class="nowrap">ten<input type="text" id="test1_20"></span> and <span class="nowrap">susp<input type="text" id="test1_21"></span> in <span class="nowrap">sce<input type="text" id="test1_22"></span> with <span class="nowrap">spe<input type="text" id="test1_23"></span> effects. <span class="nowrap">Ove<input type="text" id="test1_24"></span>, music <span class="nowrap">pl<input type="text" id="test1_25"></span> an important role in movies and can greatly impact how we feel and react to the story.
+</p>
+
+<h2>2. Money Heist</h2>
+<p>
+Money Heist is a Spanish TV series that follows a group of robbers as they attempt to pull off one of the biggest heists in history by robbing the Royal Mint of Spain. <span class="nowrap">S<input type="text" id="test2_1"></span> in Madrid, Money Heist <span class="nowrap">i<input type="text" id="test2_2"></span> filled <span class="nowrap">wi<input type="text" id="test2_3"></span> action <span class="nowrap">a<input type="text" id="test2_4"></span> unexpected <span class="nowrap">twi<input type="text" id="test2_5"></span> and <span class="nowrap">tu<input type="text" id="test2_6"></span> that <span class="nowrap">wi<input type="text" id="test2_7"></span> keep <span class="nowrap">y<input type="text" id="test2_8"></span> on <span class="nowrap">t<input type="text" id="test2_9"></span> edge <span class="nowrap">o<input type="text" id="test2_10"></span> your <span class="nowrap">se<input type="text" id="test2_11"></span>. Although <span class="nowrap">i<input type="text" id="test2_12"></span> is <span class="nowrap">n<input type="text" id="test2_13"></span> based <span class="nowrap">o<input type="text" id="test2_14"></span> a <span class="nowrap">tr<input type="text" id="test2_15"></span> <span class="nowrap">st<input type="text" id="test2_16"></span>, it <span class="nowrap">i<input type="text" id="test2_17"></span> a <span class="nowrap">grip<input type="text" id="test2_18"></span> story <span class="nowrap">th<input type="text" id="test2_19"></span> keeps <span class="nowrap">y<input type="text" id="test2_20"></span> hooked <span class="nowrap">fr<input type="text" id="test2_21"></span> the <span class="nowrap">fi<input type="text" id="test2_22"></span> episode <span class="nowrap">t<input type="text" id="test2_23"></span> the <span class="nowrap">la<input type="text" id="test2_24"></span>. If <span class="nowrap">y<input type="text" id="test2_25"></span> are keen on crime dramas, this is a must-watch series. With a dynamic cast and a well-crafted storyline, it's one of the most popular series in recent years.
+</p>
+
+<h2>3. Bookshops</h2>
+<p>
+Bookshops are a sanctuary for book lovers and avid readers. They <span class="nowrap">of<input type="text" id="test3_1"></span> a wide <span class="nowrap">var<input type="text" id="test3_2"></span> of <span class="nowrap">bo<input type="text" id="test3_3"></span>, from <span class="nowrap">bests<input type="text" id="test3_4"></span> to <span class="nowrap">mo<input type="text" id="test3_5"></span> obscure <span class="nowrap">tit<input type="text" id="test3_6"></span>. Spending a <span class="nowrap">la<input type="text" id="test3_7"></span> afternoon <span class="nowrap">flic<input type="text" id="test3_8"></span> through <span class="nowrap">t<input type="text" id="test3_9"></span> pages <span class="nowrap">o<input type="text" id="test3_10"></span> recently <span class="nowrap">rele<input type="text" id="test3_11"></span> books <span class="nowrap">i<input type="text" id="test3_12"></span> one <span class="nowrap">o<input type="text" id="test3_13"></span> life's <span class="nowrap">qu<input type="text" id="test3_14"></span> pleasures. <span class="nowrap">The<input type="text" id="test3_15"></span> is <span class="nowrap">alw<input type="text" id="test3_16"></span> a great <span class="nowrap">sele<input type="text" id="test3_17"></span> of <span class="nowrap">gen<input type="text" id="test3_18"></span> available, <span class="nowrap">wh<input type="text" id="test3_19"></span> makes <span class="nowrap">brow<input type="text" id="test3_20"></span> through <span class="nowrap">t<input type="text" id="test3_21"></span> shelves a <span class="nowrap">gr<input type="text" id="test3_22"></span> way <span class="nowrap">t<input type="text" id="test3_23"></span> discover <span class="nowrap">n<input type="text" id="test3_24"></span> authors. <span class="nowrap">Book<input type="text" id="test3_25"></span> are a treasure trove of literature and a great way to support local businesses.
+</p>
+
+<h2>4. Hear Clear</h2>
+<p>
+Introducing Hear Clear's new personal acoustic system! These <span class="nowrap">earp<input type="text" id="test4_1"></span> are <span class="nowrap">per<input type="text" id="test4_2"></span> for <span class="nowrap">any<input type="text" id="test4_3"></span> who <span class="nowrap">wa<input type="text" id="test4_4"></span> to <span class="nowrap">en<input type="text" id="test4_5"></span> their <span class="nowrap">mu<input type="text" id="test4_6"></span> without <span class="nowrap">both<input type="text" id="test4_7"></span> other <span class="nowrap">peo<input type="text" id="test4_8"></span>. They <span class="nowrap">a<input type="text" id="test4_9"></span> designed <span class="nowrap">t<input type="text" id="test4_10"></span> reduce <span class="nowrap">t<input type="text" id="test4_11"></span> volume <span class="nowrap">o<input type="text" id="test4_12"></span> outside <span class="nowrap">no<input type="text" id="test4_13"></span>, so <span class="nowrap">y<input type="text" id="test4_14"></span> can <span class="nowrap">tu<input type="text" id="test4_15"></span> down <span class="nowrap">t<input type="text" id="test4_16"></span> volume <span class="nowrap">a<input type="text" id="test4_17"></span> still <span class="nowrap">he<input type="text" id="test4_18"></span> your <span class="nowrap">mu<input type="text" id="test4_19"></span> loud <span class="nowrap">a<input type="text" id="test4_20"></span> clear. <span class="nowrap">Th<input type="text" id="test4_21"></span> are <span class="nowrap">comfo<input type="text" id="test4_22"></span> to <span class="nowrap">we<input type="text" id="test4_23"></span> and <span class="nowrap">pro<input type="text" id="test4_24"></span> great <span class="nowrap">so<input type="text" id="test4_25"></span> quality. Whether you're commuting to work or just taking a walk, make sure you do it with music. Get Hear Clear today!
+</p>
+
+<button onclick="checkAnswers()">Check answers</button>
+<button onclick="seeAnswers()">See answers</button>
+<div id="score"></div>
+
+<script>
+const answers = {
+  test1_1: "he",
+  test1_2: "olds",
+  test1_3: "s",
+  test1_4: "o",
+  test1_5: "he",
+  test1_6: "nd",
+  test1_7: "he",
+  test1_8: "f",
+  test1_9: "cters",
+  test1_10: "ch",
+  test1_11: "an",
+  test1_12: "o",
+  test1_13: "vie",
+  test1_14: "rable",
+  test1_15: "yable",
+  test1_16: "tion",
+  test1_17: "so",
+  test1_18: "o",
+  test1_19: "nse",
+  test1_20: "sion",
+  test1_21: "ense",
+  test1_22: "nes",
+  test1_23: "cial",
+  test1_24: "rall",
+  test1_25: "ays",
+  test2_1: "et",
+  test2_2: "s",
+  test2_3: "th",
+  test2_4: "nd",
+  test2_5: "sts",
+  test2_6: "rns",
+  test2_7: "ll",
+  test2_8: "ou",
+  test2_9: "he",
+  test2_10: "f",
+  test2_11: "at",
+  test2_12: "t",
+  test2_13: "ot",
+  test2_14: "n",
+  test2_15: "ue",
+  test2_16: "ory",
+  test2_17: "s",
+  test2_18: "ping",
+  test2_19: "at",
+  test2_20: "ou",
+  test2_21: "om",
+  test2_22: "rst",
+  test2_23: "o",
+  test2_24: "st",
+  test2_25: "ou",
+  test3_1: "fer",
+  test3_2: "iety",
+  test3_3: "oks",
+  test3_4: "ellers",
+  test3_5: "re",
+  test3_6: "les",
+  test3_7: "zy",
+  test3_8: "king",
+  test3_9: "he",
+  test3_10: "f",
+  test3_11: "ased",
+  test3_12: "s",
+  test3_13: "f",
+  test3_14: "iet",
+  test3_15: "re",
+  test3_16: "ays",
+  test3_17: "ction",
+  test3_18: "res",
+  test3_19: "ic",
+  test3_20: "sing",
+  test3_21: "he",
+  test3_22: "eat",
+  test3_23: "o",
+  test3_24: "ew",
+  test3_25: "shops",
+  test4_1: "hones",
+  test4_2: "fect",
+  test4_3: "one",
+  test4_4: "nts",
+  test4_5: "joy",
+  test4_6: "sic",
+  test4_7: "ering",
+  test4_8: "ple",
+  test4_9: "re",
+  test4_10: "o",
+  test4_11: "he",
+  test4_12: "f",
+  test4_13: "ise",
+  test4_14: "ou",
+  test4_15: "rn",
+  test4_16: "he",
+  test4_17: "nd",
+  test4_18: "ar",
+  test4_19: "sic",
+  test4_20: "nd",
+  test4_21: "ey",
+  test4_22: "rtable",
+  test4_23: "ar",
+  test4_24: "vide",
+  test4_25: "und"
+};
+
+    function normaliseAnswer(value) {
+        return value.trim().toLowerCase();
+    }
+
+    function checkAnswers() {
+        let correctCount = 0;
+        let total = 0;
+
+        for (const key in answers) {
+            const input = document.getElementById(key);
+            if (!input) continue;
+
+            const userValue = normaliseAnswer(input.value);
+            const correctValue = answers[key];
+            let isCorrect = false;
+
+            if (Array.isArray(correctValue)) {
+                isCorrect = correctValue.map(normaliseAnswer).includes(userValue);
+            } else {
+                isCorrect = userValue === normaliseAnswer(correctValue);
+            }
+
+            input.classList.remove("correct", "incorrect");
+            if (isCorrect) {
+                input.classList.add("correct");
+                correctCount++;
+            } else {
+                input.classList.add("incorrect");
+            }
+
+            total++;
+        }
+
+        document.getElementById("score").innerText = `Score: ${correctCount} / ${total}`;
+    }
+
+    function seeAnswers() {
+        for (const key in answers) {
+            const input = document.getElementById(key);
+            if (!input) continue;
+
+            const correctValue = Array.isArray(answers[key]) ? answers[key][0] : answers[key];
+            input.value = correctValue;
+            input.classList.remove("incorrect");
+            input.classList.add("correct");
+        }
+    }
+</script>
+
+</body>
+</html>
+
