@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive C-Test Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px 100px 100px 100px;
+            line-height: 2.0;
+            font-size: 25px;
+            text-align: left;
+            background-color: #EAEAEA;
+        }
+
+        h1 {
+            font-size: 16px;
+            color: #018539;
+            line-height: 0px;
+            font-weight: normal;
+        }
+
+        h2 {
+            font-size: 25px;
+            color: white;
+            background-color: #506cdc;
+            padding: 0px 20px;
+            border-radius: 13px;
+            margin-top: 0;
+            margin-bottom: 0px;
+            width: calc(100% - 40px);
+        }
+
+        .text-block {
+            border-right: 2px solid #DCDCDC;
+            border-bottom: 2px solid #DCDCDC;
+            background-color: white;
+            padding: 30px 50px 5px 50px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            background-color: #FFE9C9;
+            border: none;
+            border-radius: 5px;
+            font-size: 25px;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s;
+            width: 4ch;
+        }
+
+        input[type="text"]#test4_2 {
+            width: 7ch;
+        }
+
+        input[type="text"]#test1_10,
+        input[type="text"]#test2_21,
+        input[type="text"]#test2_24 {
+            width: 5ch;
+        }
+
+        input[type="text"]:hover {
+            background-color: #FFC979;
+        }
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+        .correct {
+            background-color: #33CC33 !important;
+        }
+
+        .incorrect {
+            background-color: #FF0000 !important;
+        }
+
+        button {
+            margin-top: 5px;
+            padding: 5px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #score {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+
+.timer-button, .timer-display {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.timer-button {
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    padding: 0px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 5px;
+    line-height: 2.0;
+}
+
+.timer-button:hover {
+    background-color: #000000;
+transition: background-color 0.3s;
+}
+
+.timer-button-container {
+    display: flex;
+    align-items: center;
+
+}
+
+        .timer-display {
+            background-color: #FFFFFF;
+            padding: 0px 20px;
+            font-size: 20px;
+            border-radius: 5px;
+            line-height: 2.0;
+        }
+
+        .expired {
+            background-color: #FD8383;
+        }
+
+        a {
+            color: #506cdc;
+            text-decoration: underline;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        a:hover,
+        a:visited:hover {
+            color: #ff9900;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        a:visited {
+            color: #506cdc;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        /* Header layout */
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* New link container styled like button, right-aligned */
+        .link-button-container {
+            background-color: #000000;
+            border-radius: 5px;
+            padding: 0px 20px;
+            line-height: 2.0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            transition: background-color 0.3s;
+        }
+
+        .link-button-container a {
+            color: white;
+            font-size: 20px;
+            font-weight: normal;
+            text-decoration: none;
+        }
+
+        .link-button-container:hover {
+            background-color: #ff9900;
+        }
+
+        .link-button-container:hover a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="timer-button-container">
+    <div id="start-timer" class="timer-button">Start 20-minute timer</div>
+</div>
+        <div id="timer-display" class="timer-display">20:00</div>
+        <div class="link-button-container">
+            <a href="https://e-aules.uab.cat/2024-25/mod/page/view.php?id=128073">Back to "Unit 5 - Home + identity"</a>
+        </div>
+    </div>
+
+    <div class="text-block">
+
+<h2>1. Living abroad</h2>
+<p>
+Living abroad can be an exciting adventure, but it's not always easy. 
+<span class="nowrap">You c<input type="text" id="test1_1"></span> 
+<span class="nowrap">feel home<input type="text" id="test1_2"></span> 
+<span class="nowrap">and mi<input type="text" id="test1_3"></span> 
+<span class="nowrap">family a<input type="text" id="test1_4"></span> 
+<span class="nowrap">friends. How<input type="text" id="test1_5"></span> 
+<span class="nowrap">, once y<input type="text" id="test1_6"></span> 
+<span class="nowrap">settle do<input type="text" id="test1_7"></span> 
+<span class="nowrap">and st<input type="text" id="test1_8"></span> 
+<span class="nowrap">exploring yo<input type="text" id="test1_9"></span> 
+<span class="nowrap">new surrou<input type="text" id="test1_10"></span> 
+<span class="nowrap">, you wi<input type="text" id="test1_11"></span> 
+<span class="nowrap">often fi<input type="text" id="test1_12"></span> 
+<span class="nowrap">that t<input type="text" id="test1_13"></span> 
+<span class="nowrap">local peo<input type="text" id="test1_14"></span> 
+<span class="nowrap">can b<input type="text" id="test1_15"></span> 
+<span class="nowrap">incredibly welc<input type="text" id="test1_16"></span>. 
+<span class="nowrap">This i<input type="text" id="test1_17"></span> 
+<span class="nowrap">a great cha<input type="text" id="test1_18"></span> 
+<span class="nowrap">to p<input type="text" id="test1_19"></span> 
+<span class="nowrap">down ro<input type="text" id="test1_20"></span>, 
+<span class="nowrap">make n<input type="text" id="test1_21"></span> 
+<span class="nowrap">friends. Liv<input type="text" id="test1_22"></span> 
+<span class="nowrap">abroad al<input type="text" id="test1_23"></span> 
+<span class="nowrap">helps y<input type="text" id="test1_24"></span> 
+<span class="nowrap">grow bo<input type="text" id="test1_25"></span> 
+personally and professionally, and can provide you with a unique perspective on the world.
+</p>
+
+<h2>2. Leaving home</h2>
+<p>
+Becoming independent is a crucial step for young people and it's important to know when is the best time to leave home. Many <span class="nowrap">fac<input type="text" id="test2_1"></span> <span class="nowrap">come in<input type="text" id="test2_2"></span> <span class="nowrap">play wh<input type="text" id="test2_3"></span> <span class="nowrap">making th<input type="text" id="test2_4"></span> decision, <span class="nowrap">su<input type="text" id="test2_5"></span> <span class="nowrap">as hav<input type="text" id="test2_6"></span> <span class="nowrap">grown u<input type="text" id="test2_7"></span> <span class="nowrap">and fee<input type="text" id="test2_8"></span> <span class="nowrap">ready t<input type="text" id="test2_9"></span> <span class="nowrap">live o<input type="text" id="test2_10"></span> <span class="nowrap">their o<input type="text" id="test2_11"></span>. However, <span class="nowrap">i<input type="text" id="test2_12"></span> <span class="nowrap">is al<input type="text" id="test2_13"></span> <span class="nowrap">important t<input type="text" id="test2_14"></span> <span class="nowrap">consider fina<input type="text" id="test2_15"></span> factors, <span class="nowrap">su<input type="text" id="test2_16"></span> <span class="nowrap">as ho<input type="text" id="test2_17"></span> <span class="nowrap">prices a<input type="text" id="test2_18"></span> <span class="nowrap">the abi<input type="text" id="test2_19"></span> <span class="nowrap">to aff<input type="text" id="test2_20"></span> <span class="nowrap">rent o<input type="text" id="test2_21"></span> <span class="nowrap">mortgage paym<input type="text" id="test2_22"></span>. Ultimately, <span class="nowrap">i<input type="text" id="test2_23"></span> <span class="nowrap">is a deci<input type="text" id="test2_24"></span> <span class="nowrap">that requ<input type="text" id="test2_25"></span> careful thought and consideration of one's individual circumstances.
+</p>
+
+<h2>3. Homelessness</h2>
+<p>
+Homelessness is a complex issue that affects many people from various backgrounds. Contrary <span class="nowrap">t<input type="text" id="test3_1"></span> <span class="nowrap">popular bel<input type="text" id="test3_2"></span>, <span class="nowrap">people w<input type="text" id="test3_3"></span> <span class="nowrap">end u<input type="text" id="test3_4"></span> <span class="nowrap">sleeping ro<input type="text" id="test3_5"></span> <span class="nowrap">are n<input type="text" id="test3_6"></span> <span class="nowrap">necessarily fr<input type="text" id="test3_7"></span> <span class="nowrap">poor backg<input type="text" id="test3_8"></span>. <span class="nowrap">In ma<input type="text" id="test3_9"></span> <span class="nowrap">cases, th<input type="text" id="test3_10"></span> <span class="nowrap">may ha<input type="text" id="test3_11"></span> <span class="nowrap">experienced a lo<input type="text" id="test3_12"></span> <span class="nowrap">of a j<input type="text" id="test3_13"></span>, <span class="nowrap">a relationship brea<input type="text" id="test3_14"></span> <span class="nowrap">or men<input type="text" id="test3_15"></span> <span class="nowrap">health iss<input type="text" id="test3_16"></span>. <span class="nowrap">Homeless peo<input type="text" id="test3_17"></span> <span class="nowrap">often mo<input type="text" id="test3_18"></span> <span class="nowrap">from pl<input type="text" id="test3_19"></span> <span class="nowrap">to pl<input type="text" id="test3_20"></span> <span class="nowrap">and ha<input type="text" id="test3_21"></span> <span class="nowrap">little se<input type="text" id="test3_22"></span> <span class="nowrap">of belo<input type="text" id="test3_23"></span> <span class="nowrap">to a<input type="text" id="test3_24"></span> community. <span class="nowrap">Ap<input type="text" id="test3_25"></span> from loneliness, homeless people usually lack basic necessities such as food and access to healthcare. It is crucial that society provides support to those in need, to help them regain stability and rebuild their lives.
+</p>
+
+<h2>4. Searching for my perfect house</h2>
+<p>
+I am looking for a spacious house on the outskirts of a medium-sized city. <span class="nowrap">A fire<input type="text" id="test4_1"></span> <span class="nowrap">as t<input type="text" id="test4_2"></span> <span class="nowrap">centerpiece o<input type="text" id="test4_3"></span> <span class="nowrap">the liv<input type="text" id="test4_4"></span> <span class="nowrap">room i<input type="text" id="test4_5"></span> <span class="nowrap">a mu<input type="text" id="test4_6"></span>, <span class="nowrap">as th<input type="text" id="test4_7"></span> <span class="nowrap">will a<input type="text" id="test4_8"></span> <span class="nowrap">to t<input type="text" id="test4_9"></span> <span class="nowrap">cozy atmos<input type="text" id="test4_10"></span>. <span class="nowrap">I would al<input type="text" id="test4_11"></span> <span class="nowrap">like a ho<input type="text" id="test4_12"></span> <span class="nowrap">that over<input type="text" id="test4_13"></span> <span class="nowrap">a beautiful vi<input type="text" id="test4_14"></span>, <span class="nowrap">perhaps a sce<input type="text" id="test4_15"></span> landscape. <span class="nowrap">Las<input type="text" id="test4_16"></span>, <span class="nowrap">I would pre<input type="text" id="test4_17"></span> <span class="nowrap">the ho<input type="text" id="test4_18"></span> <span class="nowrap">to b<input type="text" id="test4_19"></span> <span class="nowrap">located i<input type="text" id="test4_20"></span> <span class="nowrap">a quiet neighb<input type="text" id="test4_21"></span> <span class="nowrap">with amen<input type="text" id="test4_22"></span> nearby, <span class="nowrap">su<input type="text" id="test4_23"></span> <span class="nowrap">as a mar<input type="text" id="test4_24"></span>, <span class="nowrap">a library a<input type="text" id="test4_25"></span> a health centre. These are the main features that my perfect house would have.
+</p>
+
+</div>
+
+<button onclick="checkAnswers()">Check answers</button>
+<button onclick="seeAnswers()">See answers</button>
+<div id="score"></div>
+
+<script>
+const answers = {
+    test1_1: "an",
+    test1_2: "sick",
+    test1_3: "ss",
+    test1_4: "nd",
+    test1_5: "ever",
+    test1_6: "ou",
+    test1_7: "wn",
+    test1_8: "art",
+    test1_9: "ur",
+    test1_10: "ndings",
+    test1_11: "ll",
+    test1_12: "nd",
+    test1_13: "he",
+    test1_14: "ple",
+    test1_15: "e",
+    test1_16: "oming",
+    test1_17: "s",
+    test1_18: "nce",
+    test1_19: "ut",
+    test1_20: "ots",
+    test1_21: "ew",
+    test1_22: "ing",
+    test1_23: "so",
+    test1_24: "ou",
+    test1_25: "th",
+
+    test2_1: "tors",
+    test2_2: "to",
+    test2_3: "en",
+    test2_4: "is",
+    test2_5: "ch",
+    test2_6: "ing",
+    test2_7: "p",
+    test2_8: "ling",
+    test2_9: "o",
+    test2_10: "n",
+    test2_11: "wn",
+    test2_12: "t",
+    test2_13: "so",
+    test2_14: "to",
+    test2_15: "ncial",
+    test2_16: "ch",
+    test2_17: "use",
+    test2_18: "nd",
+    test2_19: "lity",
+    test2_20: "ord",
+    test2_21: "r",
+    test2_22: "ents",
+    test2_23: "t",
+    test2_24: "sion",
+    test2_25: "ires",
+
+    test3_1: "o",
+    test3_2: "ief",
+    test3_3: "ho",
+    test3_4: "p",
+    test3_5: "ugh",
+    test3_6: "ot",
+    test3_7: "om",
+    test3_8: "rounds",
+    test3_9: "ny",
+    test3_10: "ey",
+    test3_11: "ve",
+    test3_12: "ss",
+    test3_13: "ob",
+    test3_14: "kdown",
+    test3_15: "tal",
+    test3_16: "ues",
+    test3_17: "ple",
+    test3_18: "ve",
+    test3_19: "ace",
+    test3_20: "ace",
+    test3_21: "ve",
+    test3_22: "nse",
+    test3_23: "nging",
+    test3_24: "ny",
+    test3_25: "art",
+
+    test4_1: "place",
+    test4_2: "he",
+    test4_3: "f",
+    test4_4: "ing",
+    test4_5: "s",
+    test4_6: "st",
+    test4_7: "is",
+    test4_8: "dd",
+    test4_9: "he",
+    test4_10: "phere",
+    test4_11: "so",
+    test4_12: "use",
+    test4_13: "looks",
+    test4_14: "ew",
+    test4_15: "nic",
+    test4_16: "tly",
+    test4_17: "fer",
+    test4_18: "use",
+    test4_19: "e",
+    test4_20: "n",
+    test4_21: "ourhood",
+    test4_22: "ities",
+    test4_23: "ch",
+    test4_24: "ket",
+    test4_25: "nd"
+};
+    function normaliseAnswer(value) {
+        return value.trim().toLowerCase();
+    }
+
+    function checkAnswers() {
+        let correctCount = 0;
+        let total = 0;
+
+        for (const key in answers) {
+            const input = document.getElementById(key);
+            if (!input) continue;
+
+            const userValue = normaliseAnswer(input.value);
+            const correctValue = answers[key];
+            let isCorrect = false;
+
+            if (Array.isArray(correctValue)) {
+                isCorrect = correctValue.map(normaliseAnswer).includes(userValue);
+            } else {
+                isCorrect = userValue === normaliseAnswer(correctValue);
+            }
+
+            input.classList.remove("correct", "incorrect");
+            if (isCorrect) {
+                input.classList.add("correct");
+                correctCount++;
+            } else {
+                input.classList.add("incorrect");
+            }
+
+            total++;
+        }
+
+        document.getElementById("score").innerText = `Score: ${correctCount} / ${total}`;
+    }
+
+    function seeAnswers() {
+        for (const key in answers) {
+            const input = document.getElementById(key);
+            if (!input) continue;
+
+            const correctValue = Array.isArray(answers[key]) ? answers[key][0] : answers[key];
+            input.value = correctValue;
+            input.classList.remove("incorrect");
+            input.classList.add("correct");
+        }
+    }
+</script>
+
+
+<script>
+let timer;
+let duration = 20 * 60; // 20 minutes in seconds
+
+function startTimer() {
+    let timeRemaining = duration;
+    const display = document.getElementById("timer-display");
+
+    if (timer) clearInterval(timer); // prevent multiple intervals
+
+    timer = setInterval(() => {
+        const minutes = Math.floor(timeRemaining / 60);
+        const seconds = timeRemaining % 60;
+
+        display.textContent =
+            minutes.toString().padStart(2, '0') + ":" +
+            seconds.toString().padStart(2, '0');
+
+        if (--timeRemaining < 0) {
+            clearInterval(timer);
+            display.classList.add("expired");
+            display.textContent = "Time's up!";
+        }
+    }, 1000);
+}
+
+document.getElementById("start-timer").addEventListener("click", startTimer);
+</script>
+
+</body>
+</html>
