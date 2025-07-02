@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive C-Test Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px 100px 100px 100px;
+            line-height: 2.0;
+            font-size: 25px;
+            text-align: left;
+            background-color: #EAEAEA;
+        }
+
+        h1 {
+            font-size: 16px;
+            color: #018539;
+            line-height: 0px;
+            font-weight: normal;
+        }
+
+        h2 {
+            font-size: 25px;
+            color: white;
+            background-color: #506cdc;
+            padding: 0px 20px;
+            border-radius: 13px;
+            margin-top: 0;
+            margin-bottom: 0px;
+            width: calc(100% - 40px);
+        }
+
+        .text-block {
+            border-right: 2px solid #DCDCDC;
+            border-bottom: 2px solid #DCDCDC;
+            background-color: white;
+            padding: 30px 50px 5px 50px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            background-color: #FFE9C9;
+            border: none;
+            border-radius: 5px;
+            font-size: 25px;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s;
+            width: 4ch;
+        }
+
+        input[type="text"]#test4_2 {
+            width: 7ch;
+        }
+
+        input[type="text"]#test1_10,
+        input[type="text"]#test2_21,
+        input[type="text"]#test2_24 {
+            width: 5ch;
+        }
+
+        input[type="text"]:hover {
+            background-color: #FFC979;
+        }
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+        .correct {
+            background-color: #33CC33 !important;
+        }
+
+        .incorrect {
+            background-color: #FF0000 !important;
+        }
+
+        button {
+            margin-top: 5px;
+            padding: 5px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #score {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+
+.timer-button, .timer-display {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.timer-button {
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    padding: 0px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 5px;
+    line-height: 2.0;
+}
+
+.timer-button:hover {
+    background-color: #000000;
+transition: background-color 0.3s;
+}
+
+.timer-button-container {
+    display: flex;
+    align-items: center;
+
+}
+
+        .timer-display {
+            background-color: #FFFFFF;
+            padding: 0px 20px;
+            font-size: 20px;
+            border-radius: 5px;
+            line-height: 2.0;
+        }
+
+        .expired {
+            background-color: #FD8383;
+        }
+
+        a {
+            color: #506cdc;
+            text-decoration: underline;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        a:hover,
+        a:visited:hover {
+            color: #ff9900;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        a:visited {
+            color: #506cdc;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        /* Header layout */
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* New link container styled like button, right-aligned */
+        .link-button-container {
+            background-color: #000000;
+            border-radius: 5px;
+            padding: 0px 20px;
+            line-height: 2.0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            transition: background-color 0.3s;
+        }
+
+        .link-button-container a {
+            color: white;
+            font-size: 20px;
+            font-weight: normal;
+            text-decoration: none;
+        }
+
+        .link-button-container:hover {
+            background-color: #ff9900;
+        }
+
+        .link-button-container:hover a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="timer-button-container">
+    <div id="start-timer" class="timer-button">Start 20-minute timer</div>
+</div>
+        <div id="timer-display" class="timer-display">20:00</div>
+        <div class="link-button-container">
+            <a href="https://e-aules.uab.cat/2024-25/mod/page/view.php?id=128099">Back to "Unit 9 - Social issues"</a>
+        </div>
+    </div>
+
+    <div class="text-block">
+
+<h2>1. Wealth disparities in the UK</h2>
+<p>
+In the UK, the disparity between the wealthy and the less fortunate has been a persistent issue. The g<input type="text" id="test1_1"> between ri<input type="text" id="test1_2"> and po<input type="text" id="test1_3"> in Great Britain h<input type="text" id="test1_4"> noticeably wid<input type="text" id="test1_5"> in rec<input type="text" id="test1_6"> years. Des<input type="text" id="test1_7"> economic gro<input type="text" id="test1_8">, the num<input type="text" id="test1_9"> of home<input type="text" id="test1_10"> people h<input type="text" id="test1_11"> increased a<input type="text" id="test1_12"> poverty ra<input type="text" id="test1_13"> have rema<input type="text" id="test1_14"> high. Th<input type="text" id="test1_15"> has l<input type="text" id="test1_16"> to gro<input type="text" id="test1_17"> concern ab<input type="text" id="test1_18"> the lev<input type="text" id="test1_19"> of inequ<input type="text" id="test1_20"> in t<input type="text" id="test1_21"> country. T<input type="text" id="test1_22"> situation i<input type="text" id="test1_23"> particularly di<input type="text" id="test1_24"> for th<input type="text" id="test1_25"> in low-income households and for children growing up in poverty. It is vital that the government takes action to address this issue and ensure that economic growth benefits all members of society, not just the wealthy few.
+</p>
+
+<h2>2. Sustainable energy production</h2>
+<p>
+Finding ways to generate energy in a sustainable fashion has become one of the most urgent political issues of our time. Renewable fo<input type="text" id="test2_1"> of ene<input type="text" id="test2_2"> such a<input type="text" id="test2_3"> wind po<input type="text" id="test2_4"> and so<input type="text" id="test2_5"> energy a<input type="text" id="test2_6"> becoming increa<input type="text" id="test2_7"> important a<input type="text" id="test2_8"> we fa<input type="text" id="test2_9"> the rea<input type="text" id="test2_10"> of run<input type="text" id="test2_11"> out o<input type="text" id="test2_12"> natural reso<input type="text" id="test2_13">, and t<input type="text" id="test2_14"> negative imp<input type="text" id="test2_15"> that rel<input type="text" id="test2_16"> on fos<input type="text" id="test2_17"> fuels h<input type="text" id="test2_18"> on t<input type="text" id="test2_19"> climate. Wi<input type="text" id="test2_20"> turbines a<input type="text" id="test2_21"> solar pan<input type="text" id="test2_22"> can bo<input type="text" id="test2_23"> generate elect<input type="text" id="test2_24"> without prod<input type="text" id="test2_25"> harmful emissions. This shift to renewable energy sources is crucial in reducing our carbon footprint and mitigating the effects of climate change.
+</p>
+
+<h2>3. Making sacrifices to save the planet</h2>
+<p>
+People have become increasingly aware of the environmental crisis the planet is currently facing. This h<input type="text" id="test3_1"> caused ma<input type="text" id="test3_2"> people t<input type="text" id="test3_3"> ask i<input type="text" id="test3_4"> they wo<input type="text" id="test3_5"> be wil<input type="text" id="test3_6"> to acc<input type="text" id="test3_7"> a lower stan<input type="text" id="test3_8"> of liv<input type="text" id="test3_9"> in or<input type="text" id="test3_10"> to he<input type="text" id="test3_11"> save t<input type="text" id="test3_12"> planet. I<input type="text" id="test3_13"> is cl<input type="text" id="test3_14"> that redu<input type="text" id="test3_15"> consumption wo<input type="text" id="test3_16"> help miti<input type="text" id="test3_17"> climate cha<input type="text" id="test3_18">, but ma<input type="text" id="test3_19"> people a<input type="text" id="test3_20"> worried ab<input type="text" id="test3_21"> how th<input type="text" id="test3_22"> could aff<input type="text" id="test3_23"> their qua<input type="text" id="test3_24"> of li<input type="text" id="test3_25">. Ultimately, it is up to each individual person to decide ito what extent they are prepared to make sacrifices for environmental reasons. Every little bit helps, and it is important that everyone does their part to ensure a better future.
+</p>
+
+<h2>4. Zoos</h2>
+<p>
+Zoos are a popular way to learn about different wild animals and their habitats. They provide a<input type="text" id="test4_1"> opportunity t<input type="text" id="test4_2"> come fa<input type="text" id="test4_3"> to fa<input type="text" id="test4_4"> with exo<input type="text" id="test4_5"> animals a<input type="text" id="test4_6"> gain a bet<input type="text" id="test4_7"> understanding o<input type="text" id="test4_8"> the wo<input type="text" id="test4_9"> around u<input type="text" id="test4_10">. Furth<input type="text" id="test4_11">, they al<input type="text" id="test4_12"> children t<input type="text" id="test4_13"> interact wi<input type="text" id="test4_14"> animals th<input type="text" id="test4_15"> may ne<input type="text" id="test4_16"> otherwise s<input type="text" id="test4_17">. Zoos c<input type="text" id="test4_18"> also pl<input type="text" id="test4_19"> a vital ro<input type="text" id="test4_20"> in t<input type="text" id="test4_21"> conservation o<input type="text" id="test4_22"> endangered spe<input type="text" id="test4_23"> and he<input type="text" id="test4_24"> to ra<input type="text" id="test4_25"> awareness of conservation issues. Zoos are an important part of our natural heritage and should be used responsibly to protect and preserve the world's wildlife.
+</p>
+
+
+</div>
+
+<button onclick="checkAnswers()">Check answers</button>
+<button onclick="seeAnswers()">See answers</button>
+<div id="score"></div>
+
+<script>
+const answers = {
+  test1_1: "ap", test1_2: "ch", test1_3: "or", test1_4: "as", test1_5: "ened",
+  test1_6: "ent", test1_7: "pite", test1_8: "wth", test1_9: "ber", test1_10: "less",
+  test1_11: "as", test1_12: "nd", test1_13: "tes", test1_14: "ined", test1_15: "is",
+  test1_16: "ed", test1_17: "wing", test1_18: "out", test1_19: "els", test1_20: "ality",
+  test1_21: "he", test1_22: "he", test1_23: "s", test1_24: "re", test1_25: "ose",
+
+  test2_1: "rms", test2_2: "rgy", test2_3: "s", test2_4: "wer", test2_5: "lar",
+  test2_6: "re", test2_7: "singly", test2_8: "s", test2_9: "ce", test2_10: "lity",
+  test2_11: "ning", test2_12: "f", test2_13: "urces", test2_14: "he", test2_15: "act",
+  test2_16: "lying", test2_17: "sil", test2_18: "as", test2_19: "he", test2_20: "nd",
+  test2_21: "nd", test2_22: "els", test2_23: "th", test2_24: "ricity", test2_25: "ucing",
+
+  test3_1: "as", test3_2: "ny", test3_3: "o", test3_4: "f", test3_5: "uld", test3_6: "ling",
+  test3_7: "ept", test3_8: "dard", test3_9: "ing", test3_10: "der", test3_11: "lp", test3_12: "he",
+  test3_13: "t", test3_14: "ear", test3_15: "cing", test3_16: "uld", test3_17: "gate", test3_18: "nge",
+  test3_19: "ny", test3_20: "re", test3_21: "out", test3_22: "is", test3_23: "ect", test3_24: "lity",
+  test3_25: "fe",
+
+  test4_1: "n", test4_2: "o", test4_3: "ce", test4_4: "ce", test4_5: "tic", test4_6: "nd",
+  test4_7: "ter", test4_8: "f", test4_9: "rld", test4_10: "s", test4_11: "ermore",
+  test4_12: "low", test4_13: "o", test4_14: "th", test4_15: "ey", test4_16: "ver",
+  test4_17: "ee", test4_18: "an", test4_19: "ay", test4_20: "le", test4_21: "he",
+  test4_22: "f", test4_23: "cies", test4_24: "lp", test4_25: "ise",
+};
+    function normaliseAnswer(value) {
+        return value.trim().toLowerCase();
+    }
+
+    function checkAnswers() {
+        let correctCount = 0;
+        let total = 0;
+
+        for (const key in answers) {
+            const input = document.getElementById(key);
+            if (!input) continue;
+
+            const userValue = normaliseAnswer(input.value);
+            const correctValue = answers[key];
+            let isCorrect = false;
+
+            if (Array.isArray(correctValue)) {
+                isCorrect = correctValue.map(normaliseAnswer).includes(userValue);
+            } else {
+                isCorrect = userValue === normaliseAnswer(correctValue);
+            }
+
+            input.classList.remove("correct", "incorrect");
+            if (isCorrect) {
+                input.classList.add("correct");
+                correctCount++;
+            } else {
+                input.classList.add("incorrect");
+            }
+
+            total++;
+        }
+
+        document.getElementById("score").innerText = `Score: ${correctCount} / ${total}`;
+    }
+
+    function seeAnswers() {
+        for (const key in answers) {
+            const input = document.getElementById(key);
+            if (!input) continue;
+
+            const correctValue = Array.isArray(answers[key]) ? answers[key][0] : answers[key];
+            input.value = correctValue;
+            input.classList.remove("incorrect");
+            input.classList.add("correct");
+        }
+    }
+</script>
+
+
+<script>
+let timer;
+let duration = 20 * 60; // 20 minutes in seconds
+
+function startTimer() {
+    let timeRemaining = duration;
+    const display = document.getElementById("timer-display");
+
+    if (timer) clearInterval(timer); // prevent multiple intervals
+
+    timer = setInterval(() => {
+        const minutes = Math.floor(timeRemaining / 60);
+        const seconds = timeRemaining % 60;
+
+        display.textContent =
+            minutes.toString().padStart(2, '0') + ":" +
+            seconds.toString().padStart(2, '0');
+
+        if (--timeRemaining < 0) {
+            clearInterval(timer);
+            display.classList.add("expired");
+            display.textContent = "Time's up!";
+        }
+    }, 1000);
+}
+
+document.getElementById("start-timer").addEventListener("click", startTimer);
+</script>
+
+</body>
+</html>
