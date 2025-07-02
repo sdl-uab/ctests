@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive C-Test Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px 100px 100px 100px;
+            line-height: 2.0;
+            font-size: 25px;
+            text-align: left;
+            background-color: #EAEAEA;
+        }
+
+        h1 {
+            font-size: 16px;
+            color: #018539;
+            line-height: 0px;
+            font-weight: normal;
+        }
+
+        h2 {
+            font-size: 25px;
+            color: white;
+            background-color: #506cdc;
+            padding: 0px 20px;
+            border-radius: 13px;
+            margin-top: 0;
+            margin-bottom: 0px;
+            width: calc(100% - 40px);
+        }
+
+        .text-block {
+            border-right: 2px solid #DCDCDC;
+            border-bottom: 2px solid #DCDCDC;
+            background-color: white;
+            padding: 30px 50px 5px 50px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            background-color: #FFE9C9;
+            border: none;
+            border-radius: 5px;
+            font-size: 25px;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s;
+            width: 4ch;
+        }
+
+        input[type="text"]#test4_2 {
+            width: 7ch;
+        }
+
+        input[type="text"]#test1_10,
+        input[type="text"]#test2_21,
+        input[type="text"]#test2_24 {
+            width: 5ch;
+        }
+
+        input[type="text"]:hover {
+            background-color: #FFC979;
+        }
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+        .correct {
+            background-color: #33CC33 !important;
+        }
+
+        .incorrect {
+            background-color: #FF0000 !important;
+        }
+
+        button {
+            margin-top: 5px;
+            padding: 5px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #score {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+
+.timer-button, .timer-display {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.timer-button {
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    padding: 0px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 5px;
+    line-height: 2.0;
+}
+
+.timer-button:hover {
+    background-color: #000000;
+transition: background-color 0.3s;
+}
+
+.timer-button-container {
+    display: flex;
+    align-items: center;
+
+}
+
+        .timer-display {
+            background-color: #FFFFFF;
+            padding: 0px 20px;
+            font-size: 20px;
+            border-radius: 5px;
+            line-height: 2.0;
+        }
+
+        .expired {
+            background-color: #FD8383;
+        }
+
+        a {
+            color: #506cdc;
+            text-decoration: underline;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        a:hover,
+        a:visited:hover {
+            color: #ff9900;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        a:visited {
+            color: #506cdc;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        /* Header layout */
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* New link container styled like button, right-aligned */
+        .link-button-container {
+            background-color: #000000;
+            border-radius: 5px;
+            padding: 0px 20px;
+            line-height: 2.0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            transition: background-color 0.3s;
+        }
+
+        .link-button-container a {
+            color: white;
+            font-size: 20px;
+            font-weight: normal;
+            text-decoration: none;
+        }
+
+        .link-button-container:hover {
+            background-color: #ff9900;
+        }
+
+        .link-button-container:hover a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="timer-button-container">
+    <div id="start-timer" class="timer-button">Start 20-minute timer</div>
+</div>
+        <div id="timer-display" class="timer-display">20:00</div>
+        <div class="link-button-container">
+            <a href="https://e-aules.uab.cat/2024-25/mod/page/view.php?id=128086">Back to "Unit 7 - Health + lifestyle"</a>
+        </div>
+    </div>
+
+    <div class="text-block">
+
+<h2>1. Stress is good for us</h2>
+<p>
+Contrary to popular belief, stress doesn't always have to be a bad thing. <span class="nowrap">In fa<input type="text" id="test1_1"></span> <span class="nowrap">feeling a b<input type="text" id="test1_2"></span> <span class="nowrap">stressed c<input type="text" id="test1_3"></span> <span class="nowrap">actually b<input type="text" id="test1_4"></span> <span class="nowrap">beneficial a<input type="text" id="test1_5"></span> <span class="nowrap">push u<input type="text" id="test1_6"></span> <span class="nowrap">to per<input type="text" id="test1_7"></span> <span class="nowrap">at o<input type="text" id="test1_8"></span> <span class="nowrap">best. T<input type="text" id="test1_9"></span> <span class="nowrap">key i<input type="text" id="test1_10"></span> <span class="nowrap">to av<input type="text" id="test1_11"></span> <span class="nowrap">getting overw<input type="text" id="test1_12"></span> <span class="nowrap">and t<input type="text" id="test1_13"></span> <span class="nowrap">know wh<input type="text" id="test1_14"></span> <span class="nowrap">it's ti<input type="text" id="test1_15"></span> <span class="nowrap">to unw<input type="text" id="test1_16"></span>. <span class="nowrap">When w<input type="text" id="test1_17"></span> <span class="nowrap">are un<input type="text" id="test1_18"></span> <span class="nowrap">pressure, w<input type="text" id="test1_19"></span> <span class="nowrap">often wo<input type="text" id="test1_20"></span> <span class="nowrap">harder a<input type="text" id="test1_21"></span> <span class="nowrap">become mo<input type="text" id="test1_22"></span> <span class="nowrap">focused, resu<input type="text" id="test1_23"></span> <span class="nowrap">in impr<input type="text" id="test1_24"></span> <span class="nowrap">productivity. O<input type="text" id="test1_25"></span> course, it's important to not constantly be in a hurry and burn out, so make sure to balance stress with proper self-care. By learning how to manage stress in a healthy way, it can actually be a driving force behind success.
+</p>
+
+<h2>2. The sleep patterns of students</h2>
+<p>
+University students often struggle to get a good night's sleep. Many <span class="nowrap">stud<input type="text" id="test2_1"></span> <span class="nowrap">feel sle<input type="text" id="test2_2"></span> <span class="nowrap">throughout t<input type="text" id="test2_3"></span> <span class="nowrap">day a<input type="text" id="test2_4"></span> <span class="nowrap">have tro<input type="text" id="test2_5"></span> <span class="nowrap">focussing i<input type="text" id="test2_6"></span> <span class="nowrap">class. So<input type="text" id="test2_7"></span> <span class="nowrap">even suf<input type="text" id="test2_8"></span> <span class="nowrap">from inso<input type="text" id="test2_9"></span> <span class="nowrap">and can't g<input type="text" id="test2_10"></span> <span class="nowrap">to sl<input type="text" id="test2_11"></span> <span class="nowrap">at ni<input type="text" id="test2_12"></span> <span class="nowrap">despite fee<input type="text" id="test2_13"></span> <span class="nowrap">exhausted. T<input type="text" id="test2_14"></span> <span class="nowrap">combat th<input type="text" id="test2_15"></span> <span class="nowrap">some stud<input type="text" id="test2_16"></span> <span class="nowrap">opt t<input type="text" id="test2_17"></span> <span class="nowrap">have a n<input type="text" id="test2_18"></span> <span class="nowrap">during t<input type="text" id="test2_19"></span> <span class="nowrap">day i<input type="text" id="test2_20"></span> <span class="nowrap">order t<input type="text" id="test2_21"></span> <span class="nowrap">catch u<input type="text" id="test2_22"></span> <span class="nowrap">on mis<input type="text" id="test2_23"></span> <span class="nowrap">sleep. How<input type="text" id="test2_24"></span> against napping too often, as it can disrupt the body's natural sleep-wake cycle.
+</p>
+
+<h2>3. The common cold</h2>
+<p>
+The common cold is a viral illness affecting the respiratory system. <span class="nowrap">It cau<input type="text" id="test3_1"></span> <span class="nowrap">symptoms li<input type="text" id="test3_2"></span> <span class="nowrap">a runny o<input type="text" id="test3_3"></span> <span class="nowrap">blocked u<input type="text" id="test3_4"></span> <span class="nowrap">nose, coug<input type="text" id="test3_5"></span> <span class="nowrap">and snee<input type="text" id="test3_6"></span> <span class="nowrap">It i<input type="text" id="test3_7"></span> <span class="nowrap">easily spr<input type="text" id="test3_8"></span> <span class="nowrap">from per<input type="text" id="test3_9"></span> <span class="nowrap">to per<input type="text" id="test3_10"></span> <span class="nowrap">and c<input type="text" id="test3_11"></span> <span class="nowrap">last f<input type="text" id="test3_12"></span> <span class="nowrap">about a we<input type="text" id="test3_13"></span> <span class="nowrap">To pre<input type="text" id="test3_14"></span> <span class="nowrap">the spr<input type="text" id="test3_15"></span> <span class="nowrap">of t<input type="text" id="test3_16"></span> <span class="nowrap">cold, go<input type="text" id="test3_17"></span> <span class="nowrap">hygiene su<input type="text" id="test3_18"></span> <span class="nowrap">as cove<input type="text" id="test3_19"></span> <span class="nowrap">the mo<input type="text" id="test3_20"></span> <span class="nowrap">and was<input type="text" id="test3_21"></span> <span class="nowrap">hands regu<input type="text" id="test3_22"></span> <span class="nowrap">is cru<input type="text" id="test3_23"></span> <span class="nowrap">Surprisingly, th<input type="text" id="test3_24"></span> <span class="nowrap">is n<input type="text" id="test3_25"></span> cure for the common cold, but painkillers and decongestants can relieve symptoms. With proper care, the cold will usually resolve on its own.
+</p>
+
+<h2>4. Healthy living</h2>
+<p>
+Staying healthy can be difficult, but it is possible with the right mindset and approach. <span class="nowrap">One w<input type="text" id="test4_1"></span> <span class="nowrap">to imp<input type="text" id="test4_2"></span> <span class="nowrap">your hea<input type="text" id="test4_3"></span> <span class="nowrap">is b<input type="text" id="test4_4"></span> <span class="nowrap">joining a g<input type="text" id="test4_5"></span> <span class="nowrap">and incorp<input type="text" id="test4_6"></span> <span class="nowrap">physical acti<input type="text" id="test4_7"></span> <span class="nowrap">into yo<input type="text" id="test4_8"></span> <span class="nowrap">daily rou<input type="text" id="test4_9"></span> <span class="nowrap">Another effe<input type="text" id="test4_10"></span> <span class="nowrap">step i<input type="text" id="test4_11"></span> <span class="nowrap">to c<input type="text" id="test4_12"></span> <span class="nowrap">down o<input type="text" id="test4_13"></span> <span class="nowrap">unhealthy hab<input type="text" id="test4_14"></span> <span class="nowrap">such a<input type="text" id="test4_15"></span> <span class="nowrap">eating ju<input type="text" id="test4_16"></span> <span class="nowrap">food. Sm<input type="text" id="test4_17"></span> <span class="nowrap">changes, li<input type="text" id="test4_18"></span> <span class="nowrap">taking t<input type="text" id="test4_19"></span> <span class="nowrap">stairs ins<input type="text" id="test4_20"></span> <span class="nowrap">of t<input type="text" id="test4_21"></span> <span class="nowrap">lift, c<input type="text" id="test4_22"></span> <span class="nowrap">also ha<input type="text" id="test4_23"></span> <span class="nowrap">a big imp<input type="text" id="test4_24"></span> <span class="nowrap">on ove<input type="text" id="test4_25"></span> health and fitness. It is important to remember that health is a journey, not a destination, and that progress is more important than perfection. With discipline and determination, anyone can make the necessary changes to lead a healthier and happier life.
+</p>
+
+
+
+
+</div>
+
+<button onclick="checkAnswers()">Check answers</button>
+<button onclick="seeAnswers()">See answers</button>
+<div id="score"></div>
+
+<script>
+const answers = {
+    'test1_1': 'ct,',
+    'test1_2': 'it',
+    'test1_3': 'an',
+    'test1_4': 'e',
+    'test1_5': 'nd',
+    'test1_6': 's',
+    'test1_7': 'form',
+    'test1_8': 'ur',
+    'test1_9': 'he',
+    'test1_10': 's',
+    'test1_11': 'oid',
+    'test1_12': 'helmed',
+    'test1_13': 'o',
+    'test1_14': 'en',
+    'test1_15': 'me',
+    'test1_16': 'ind',
+    'test1_17': 'e',
+    'test1_18': 'der',
+    'test1_19': 'e',
+    'test1_20': 'rk',
+    'test1_21': 'nd',
+    'test1_22': 're',
+    'test1_23': 'lting',
+    'test1_24': 'oved',
+    'test1_25': 'f',
+    'test2_1': 'ents',
+    'test2_2': 'epy',
+    'test2_3': 'he',
+    'test2_4': 'nd',
+    'test2_5': 'uble',
+    'test2_6': 'n',
+    'test2_7': 'me',
+    'test2_8': 'fer',
+    'test2_9': 'mnia',
+    'test2_10': 'et',
+    'test2_11': 'eep',
+    'test2_12': 'ght',
+    'test2_13': 'ling',
+    'test2_14': 'o',
+    'test2_15': 'is',
+    'test2_16': 'ents',
+    'test2_17': 'o',
+    'test2_18': 'ap',
+    'test2_19': 'he',
+    'test2_20': 'n',
+    'test2_21': 'o',
+    'test2_22': 'p',
+    'test2_23': 'sed',
+    'test2_24': 'ever',
+    'test2_25': 'rn',
+    'test3_1': 'ses',
+    'test3_2': 'ke',
+    'test3_3': 'r',
+    'test3_4': 'p',
+    'test3_5': 'hing',
+    'test3_6': 'zing',
+    'test3_7': 's',
+    'test3_8': 'ead',
+    'test3_9': 'son',
+    'test3_10': 'son',
+    'test3_11': 'an',
+    'test3_12': 'or',
+    'test3_13': 'ek',
+    'test3_14': 'vent',
+    'test3_15': 'ead',
+    'test3_16': 'he',
+    'test3_17': 'od',
+    'test3_18': 'ch',
+    'test3_19': 'ring',
+    'test3_20': 'uth',
+    'test3_21': 'hing',
+    'test3_22': 'larly',
+    'test3_23': 'cial',
+    'test3_24': 'ere',
+    'test3_25': 'o',
+    'test4_1': 'ay',
+    'test4_2': 'rove',
+    'test4_3': 'lth',
+    'test4_4': 'y',
+    'test4_5': 'ym',
+    'test4_6': 'orating',
+    'test4_7': 'vity',
+    'test4_8': 'ur',
+    'test4_9': 'tine',
+    'test4_10': 'ctive',
+    'test4_11': 's',
+    'test4_12': 'ut',
+    'test4_13': 'n',
+    'test4_14': 'its',
+    'test4_15': 's',
+    'test4_16': 'nk',
+    'test4_17': 'all',
+    'test4_18': 'ke',
+    'test4_19': 'he',
+    'test4_20': 'tead',
+    'test4_21': 'he',
+    'test4_22': 'an',
+    'test4_23': 've',
+    'test4_24': 'act',
+    'test4_25': 'rall',
+};
+    function normaliseAnswer(value) {
+        return value.trim().toLowerCase();
+    }
+
+    function checkAnswers() {
+        let correctCount = 0;
+        let total = 0;
+
+        for (const key in answers) {
+            const input = document.getElementById(key);
+            if (!input) continue;
+
+            const userValue = normaliseAnswer(input.value);
+            const correctValue = answers[key];
+            let isCorrect = false;
+
+            if (Array.isArray(correctValue)) {
+                isCorrect = correctValue.map(normaliseAnswer).includes(userValue);
+            } else {
+                isCorrect = userValue === normaliseAnswer(correctValue);
+            }
+
+            input.classList.remove("correct", "incorrect");
+            if (isCorrect) {
+                input.classList.add("correct");
+                correctCount++;
+            } else {
+                input.classList.add("incorrect");
+            }
+
+            total++;
+        }
+
+        document.getElementById("score").innerText = `Score: ${correctCount} / ${total}`;
+    }
+
+    function seeAnswers() {
+        for (const key in answers) {
+            const input = document.getElementById(key);
+            if (!input) continue;
+
+            const correctValue = Array.isArray(answers[key]) ? answers[key][0] : answers[key];
+            input.value = correctValue;
+            input.classList.remove("incorrect");
+            input.classList.add("correct");
+        }
+    }
+</script>
+
+
+<script>
+let timer;
+let duration = 20 * 60; // 20 minutes in seconds
+
+function startTimer() {
+    let timeRemaining = duration;
+    const display = document.getElementById("timer-display");
+
+    if (timer) clearInterval(timer); // prevent multiple intervals
+
+    timer = setInterval(() => {
+        const minutes = Math.floor(timeRemaining / 60);
+        const seconds = timeRemaining % 60;
+
+        display.textContent =
+            minutes.toString().padStart(2, '0') + ":" +
+            seconds.toString().padStart(2, '0');
+
+        if (--timeRemaining < 0) {
+            clearInterval(timer);
+            display.classList.add("expired");
+            display.textContent = "Time's up!";
+        }
+    }, 1000);
+}
+
+document.getElementById("start-timer").addEventListener("click", startTimer);
+</script>
+
+</body>
+</html>
