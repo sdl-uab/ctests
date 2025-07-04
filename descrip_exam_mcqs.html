@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive C-Test Exercises</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px 100px 100px 100px;
+            line-height: 2.0;
+            font-size: 25px;
+            text-align: left;
+            background-color: #EAEAEA;
+        }
+
+        h1 {
+            font-size: 16px;
+            color: #018539;
+            line-height: 0px;
+            font-weight: normal;
+        }
+
+        h2 {
+            font-size: 25px;
+            color: white;
+            background: linear-gradient(to right, #ff9900, #FFC165);
+            padding: 0px 20px;
+            border-radius: 13px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            width: calc(100% - 40px);
+        }
+
+        .text-block {
+            border-right: 2px solid #DCDCDC;
+            border-bottom: 2px solid #DCDCDC;
+            background-color: white;
+            padding: 30px 50px 5px 50px;
+            margin-bottom: 20px;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        /* Header layout */
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* Inserted multiple choice styles */
+        .question-container {
+            display: none;
+        }
+
+        .question-container.active {
+            display: block;
+        }
+
+        .options {
+            margin-top: 10px;
+            margin-bottom: 40px;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0px;
+            padding-left: 50px;
+		line-height: 1.7;
+        }
+
+        .option-label input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 25px;
+            height: 25px;
+            border: 2px solid black;
+            border-radius: 50%;
+            margin-right: 30px;
+            background-color: white;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .option-label input[type="radio"]:checked {
+            background-color: #ff9900;
+        }
+
+        button {
+            font-size: 22px;
+            padding: 7px 15px;
+            margin-top: 0;
+            margin-bottom: 40px;
+            cursor: pointer;
+        }
+
+
+.question-container > div:first-child {
+        margin-left: 21px;
+    }
+
+.question-container > button {
+        margin-left: 21px;
+    }
+
+        .score {
+            font-size: 40px;
+            color: #ff9900;
+            display: none;
+        }
+</style>
+</head>
+
+<body>
+    <div class="header-container">
+        <!-- Your header content if any -->
+    </div>
+
+    <div class="text-block">
+
+        <h2>Exercici d'opció múltiple</h2>
+
+        <div id="quiz"></div>
+        <div class="score" id="score"></div>
+
+    </div>
+
+<script>
+  const questions = [
+    {
+      text: "I'm not particularly good ________ taking photographs, I'm afraid.",
+      options: ["at", "in", "for", "on"],
+      answer: "at"
+    },
+    {
+      text: "What ________ you do with the money if you won one of these big lotteries?",
+      options: ["will", "would", "should", "did"],
+      answer: "would"
+    },
+    {
+      text: "I ________ a very nice woman down at the hotel reception desk.",
+      options: ["look", "met", "was", "knew"],
+      answer: "met"
+    },
+    {
+      text: "Frank is waiting downstairs with all ________ friends.",
+      options: ["his", "yours", "hers", "theirs"],
+      answer: "his"
+    },
+    {
+      text: "You've only just started work! You ________ possibly be tired already.",
+      options: ["may not", "mustn't", "won't", "can't"],
+      answer: "can't"
+    }
+  ];
+
+  let currentQuestion = 0;
+  let score = 0;
+
+  const quizDiv = document.getElementById('quiz');
+
+  function showQuestion(index) {
+    const q = questions[index];
+
+    const container = document.createElement('div');
+    container.className = 'question-container active';
+
+    const question = document.createElement('div');
+    question.textContent = q.text;
+    container.appendChild(question);
+
+    const optionsDiv = document.createElement('div');
+    optionsDiv.className = 'options';
+
+    q.options.forEach((opt, i) => {
+      const label = document.createElement('label');
+      label.className = 'option-label';
+
+      const radio = document.createElement('input');
+      radio.type = 'radio';
+      radio.name = 'question' + index;
+      radio.value = opt;
+
+      label.appendChild(radio);
+      label.appendChild(document.createTextNode(opt));
+      optionsDiv.appendChild(label);
+    });
+
+    container.appendChild(optionsDiv);
+
+    const button = document.createElement('button');
+    button.textContent = index < questions.length - 1 ? "Next question" : "See your score";
+    button.onclick = () => {
+      const selected = container.querySelector('input[type="radio"]:checked');
+      if (!selected) {
+        alert("Please select an option before continuing.");
+        return;
+      }
+      if (selected.value === q.answer) {
+        score++;
+      }
+      container.classList.remove('active');
+      if (index + 1 < questions.length) {
+        showQuestion(index + 1);
+      } else {
+        showScore();
+      }
+    };
+
+    container.appendChild(button);
+    quizDiv.appendChild(container);
+  }
+
+  function showScore() {
+    const scoreDiv = document.getElementById('score');
+    scoreDiv.textContent = `Your score: ${score} / ${questions.length}`;
+    scoreDiv.style.display = 'block';
+  }
+
+  // Initialise
+  showQuestion(0);
+</script>
+
+</body>
+</html>

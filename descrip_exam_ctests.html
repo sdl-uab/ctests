@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive C-Test Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px 100px 100px 100px;
+            line-height: 2.0;
+            font-size: 25px;
+            text-align: left;
+            background-color: #EAEAEA;
+        }
+
+        h1 {
+            font-size: 16px;
+            color: #018539;
+            line-height: 0px;
+            font-weight: normal;
+        }
+
+        h2 {
+    font-size: 25px;
+    color: white;
+    background: linear-gradient(to right, #ff9900, #FFC165);
+    padding: 0px 20px;
+    border-radius: 13px;
+    margin-top: 0;
+    margin-bottom: 0px;
+    width: calc(100% - 40px);
+}
+
+        .text-block {
+            border-right: 2px solid #DCDCDC;
+            border-bottom: 2px solid #DCDCDC;
+            background-color: white;
+            padding: 30px 50px 5px 50px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            background-color: #FFE9C9;
+            border: none;
+            border-radius: 5px;
+            font-size: 25px;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s;
+            width: 4ch;
+        }
+
+        input[type="text"]#test4_16 {
+            width: 7ch;
+        }
+
+input[type="text"]#test3_7 {
+            width: 7ch;
+        }
+
+input[type="text"]#test3_10 {
+            width: 7ch;
+        }
+
+input[type="text"]#test3_14 {
+            width: 7ch;
+        }
+
+input[type="text"]#test3_20 {
+            width: 7ch;
+        }
+
+input[type="text"]#test3_21 {
+            width: 7ch;
+        }
+
+input[type="text"]#test3_23 {
+            width: 7ch;
+        }
+
+input[type="text"]#test4_25 {
+            width: 5ch;
+        }
+
+
+
+        input[type="text"]#test1_10,
+        input[type="text"]#test2_21,
+        input[type="text"]#test2_24 {
+            width: 5ch;
+        }
+
+        input[type="text"]:hover {
+            background-color: #FFC979;
+        }
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+        .correct {
+            background-color: #33CC33 !important;
+        }
+
+        .incorrect {
+            background-color: #FF0000 !important;
+        }
+
+        button {
+            margin-top: 5px;
+            padding: 5px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #score {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+
+.timer-button, .timer-display {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.timer-button {
+    background-color: #5F5F5F;
+    color: white;
+    border: none;
+    padding: 0px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 5px;
+    line-height: 2.0;
+}
+
+.timer-button:hover {
+    background-color: #000000;
+    transition: background-color 0.3s;
+}
+
+.timer-button-container {
+    display: flex;
+    align-items: center;
+
+}
+
+        .timer-display {
+            background-color: #FFFFFF;
+            padding: 0px 20px;
+            font-size: 20px;
+            border-radius: 5px;
+            line-height: 2.0;
+        }
+
+        .expired {
+            background-color: #FD8383;
+        }
+
+        a {
+            color: #506cdc;
+            text-decoration: underline;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        a:hover,
+        a:visited:hover {
+            color: #ff9900;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        a:visited {
+            color: #506cdc;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        /* Header layout */
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* New link container styled like button, right-aligned */
+        .link-button-container {
+            background-color: #000000;
+            border-radius: 5px;
+            padding: 0px 20px;
+            line-height: 2.0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            transition: background-color 0.3s;
+        }
+
+        .link-button-container a {
+            color: white;
+            font-size: 20px;
+            font-weight: normal;
+            text-decoration: none;
+        }
+
+        .link-button-container:hover {
+            background-color: #ff9900;
+        }
+
+        .link-button-container:hover a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="timer-button-container">
+    <div id="start-timer" class="timer-button">Start 20-minute timer</div>
+</div>
+        <div id="timer-display" class="timer-display">20:00</div>
+            </div>
+
+    <div class="text-block">
+
+<h2>1. Achieving a good work-life balance</h2>
+<p>Achieving a good work-life balance requires a certain level of planning and self-discipline. 
+<span class="nowrap">When fa<input type="text" id="test1_1"></span> 
+<span class="nowrap">with a he<input type="text" id="test1_2"></span> 
+<span class="nowrap">workload, i<input type="text" id="test1_3"></span> 
+<span class="nowrap">is impo<input type="text" id="test1_4"></span> 
+<span class="nowrap">to prior<input type="text" id="test1_5"></span> 
+<span class="nowrap">tasks i<input type="text" id="test1_6"></span> 
+<span class="nowrap">order t<input type="text" id="test1_7"></span> 
+<span class="nowrap">avoid get<input type="text" id="test1_8"></span> 
+<span class="nowrap">snowed un<input type="text" id="test1_9"></span>. 
+<span class="nowrap">Working lo<input type="text" id="test1_10"></span> 
+<span class="nowrap">hours o<input type="text" id="test1_11"></span> 
+<span class="nowrap">night shi<input type="text" id="test1_12"></span> 
+<span class="nowrap">may b<input type="text" id="test1_13"></span> 
+<span class="nowrap">necessary a<input type="text" id="test1_14"></span> 
+<span class="nowrap">times, b<input type="text" id="test1_15"></span> 
+<span class="nowrap">try t<input type="text" id="test1_16"></span> 
+<span class="nowrap">make th<input type="text" id="test1_17"></span> 
+<span class="nowrap">the exce<input type="text" id="test1_18"></span> 
+<span class="nowrap">rather th<input type="text" id="test1_19"></span> 
+<span class="nowrap">the ru<input type="text" id="test1_20"></span>. 
+<span class="nowrap">Set your<input type="text" id="test1_21"></span> 
+<span class="nowrap">realistic dead<input type="text" id="test1_22"></span> 
+<span class="nowrap">to red<input type="text" id="test1_23"></span> 
+<span class="nowrap">stress lev<input type="text" id="test1_24"></span>, 
+<span class="nowrap">and, ab<input type="text" id="test1_25"></span> 
+all, reserve plenty of time for rest, relaxation, and leisure. By finding a balance between work and life, you'll be better able to maintain your well-being and overall happiness.</p>
+
+<h2>2. Working while studying</h2>
+<p>Many university students today are juggling the demands of both work and study. 
+<span class="nowrap">With ris<input type="text" id="test2_1"></span> 
+<span class="nowrap">tuition fe<input type="text" id="test2_2"></span>, 
+<span class="nowrap">many stud<input type="text" id="test2_3"></span> 
+<span class="nowrap">are for<input type="text" id="test2_4"></span> 
+<span class="nowrap">to ta<input type="text" id="test2_5"></span> 
+<span class="nowrap">on jo<input type="text" id="test2_6"></span> 
+<span class="nowrap">during th<input type="text" id="test2_7"></span> 
+<span class="nowrap">studies t<input type="text" id="test2_8"></span> 
+<span class="nowrap">help co<input type="text" id="test2_9"></span> 
+<span class="nowrap">the co<input type="text" id="test2_10"></span>. 
+<span class="nowrap">While wor<input type="text" id="test2_11"></span> 
+<span class="nowrap">can pro<input type="text" id="test2_12"></span> 
+<span class="nowrap">some ex<input type="text" id="test2_13"></span> 
+<span class="nowrap">income, i<input type="text" id="test2_14"></span> 
+<span class="nowrap">can al<input type="text" id="test2_15"></span> 
+<span class="nowrap">be diff<input type="text" id="test2_16"></span> 
+<span class="nowrap">to bal<input type="text" id="test2_17"></span> 
+<span class="nowrap">with t<input type="text" id="test2_18"></span> 
+<span class="nowrap">demands o<input type="text" id="test2_19"></span> 
+<span class="nowrap">a fu<input type="text" id="test2_20"></span> 
+<span class="nowrap">course lo<input type="text" id="test2_21"></span>. 
+<span class="nowrap">Additionally, wor<input type="text" id="test2_22"></span> 
+<span class="nowrap">unsocial ho<input type="text" id="test2_23"></span> 
+<span class="nowrap">can ha<input type="text" id="test2_24"></span> 
+<span class="nowrap">a nega<input type="text" id="test2_25"></span> 
+impact on a student's mental and physical well-being. It's important for students to find a balance that works for them and to communicate with their professors and employers to manage the demands on their time.</p>
+
+<h2>3. Being self-employed</h2>
+<p>Being self-employed can be an extremely rewarding experience. 
+<span class="nowrap">Setting u<input type="text" id="test3_1"></span> 
+<span class="nowrap">and run<input type="text" id="test3_2"></span> 
+<span class="nowrap">your o<input type="text" id="test3_3"></span> 
+<span class="nowrap">business c<input type="text" id="test3_4"></span> 
+<span class="nowrap">provide a<input type="text" id="test3_5"></span> 
+<span class="nowrap">escape fr<input type="text" id="test3_6"></span> 
+<span class="nowrap">a monot<input type="text" id="test3_7"></span> 
+<span class="nowrap">job a<input type="text" id="test3_8"></span> 
+<span class="nowrap">give y<input type="text" id="test3_9"></span> 
+<span class="nowrap">the fre<input type="text" id="test3_10"></span> 
+<span class="nowrap">to wo<input type="text" id="test3_11"></span> 
+<span class="nowrap">on some<input type="text" id="test3_12"></span> 
+<span class="nowrap">you a<input type="text" id="test3_13"></span> 
+<span class="nowrap">truly passi<input type="text" id="test3_14"></span> 
+<span class="nowrap">about. How<input type="text" id="test3_15"></span>, 
+<span class="nowrap">it al<input type="text" id="test3_16"></span> 
+<span class="nowrap">comes wi<input type="text" id="test3_17"></span> 
+<span class="nowrap">its o<input type="text" id="test3_18"></span> 
+<span class="nowrap">set o<input type="text" id="test3_19"></span> 
+<span class="nowrap">challenges, incl<input type="text" id="test3_20"></span> 
+<span class="nowrap">financial uncer<input type="text" id="test3_21"></span> 
+<span class="nowrap">and t<input type="text" id="test3_22"></span> 
+<span class="nowrap">respons<input type="text" id="test3_23"></span> 
+<span class="nowrap">of be<input type="text" id="test3_24"></span> 
+<span class="nowrap">your o<input type="text" id="test3_25"></span> 
+boss. It is important to carefully weigh the pros and cons before making the decision to become self-employed.</p>
+
+<h2>4. Don't drop out. Take a break instead!</h2>
+<p>Many students who drop out of university do so because they are struggling to keep up with the workload and may even be failing their classes. 
+<span class="nowrap">Taking a g<input type="text" id="test4_1"></span> 
+<span class="nowrap">year c<input type="text" id="test4_2"></span> 
+<span class="nowrap">be a go<input type="text" id="test4_3"></span> 
+<span class="nowrap">way t<input type="text" id="test4_4"></span> 
+<span class="nowrap">recharge a<input type="text" id="test4_5"></span> 
+<span class="nowrap">refocus bef<input type="text" id="test4_6"></span> 
+<span class="nowrap">returning t<input type="text" id="test4_7"></span> 
+<span class="nowrap">college. Dur<input type="text" id="test4_8"></span> 
+<span class="nowrap">this ti<input type="text" id="test4_9"></span>, 
+<span class="nowrap">students c<input type="text" id="test4_10"></span> 
+<span class="nowrap">work, tra<input type="text" id="test4_11"></span>, 
+<span class="nowrap">or pur<input type="text" id="test4_12"></span> 
+<span class="nowrap">other inte<input type="text" id="test4_13"></span> 
+<span class="nowrap">without hav<input type="text" id="test4_14"></span> 
+<span class="nowrap">the pres<input type="text" id="test4_15"></span> 
+<span class="nowrap">of assig<input type="text" id="test4_16"></span> 
+<span class="nowrap">and ex<input type="text" id="test4_17"></span>. 
+<span class="nowrap">This c<input type="text" id="test4_18"></span> 
+<span class="nowrap">help th<input type="text" id="test4_19"></span> 
+<span class="nowrap">to ga<input type="text" id="test4_20"></span> 
+<span class="nowrap">a n<input type="text" id="test4_21"></span> 
+<span class="nowrap">perspective a<input type="text" id="test4_22"></span> 
+<span class="nowrap">return t<input type="text" id="test4_23"></span> 
+<span class="nowrap">their stu<input type="text" id="test4_24"></span> 
+<span class="nowrap">with ren<input type="text" id="test4_25"></span> 
+motivation and a better understanding of their goals. Additionally, it can provide them with the opportunity to explore different career paths.</p>
+
+</div>
+
+<button onclick="checkAnswers()">Check answers</button>
+<button onclick="seeAnswers()">See answers</button>
+<div id="score"></div>
+
+<script>
+const answers = {
+  
+test1_1: "ced",
+        test1_2: "avy",
+        test1_3: "t",
+        test1_4: "rtant",
+test1_5: ["itize", "itise"],
+        test1_6: "n",
+        test1_7: "o",
+        test1_8: "ting",
+        test1_9: "der",
+        test1_10: "ng",
+        test1_11: "r",
+        test1_12: "fts",
+        test1_13: "e",
+        test1_14: "t",
+        test1_15: "ut",
+        test1_16: "o",
+test1_17: ["ese", "em"],
+        test1_18: "ption",
+        test1_19: "an",
+        test1_20: "le",
+        test1_21: "self",
+        test1_22: "lines",
+        test1_23: "uce",
+        test1_24: "els",
+        test1_25: "ove",
+        test2_1: "ing",
+        test2_2: "es",
+        test2_3: "ents",
+        test2_4: "ced",
+        test2_5: "ke",
+        test2_6: "bs",
+        test2_7: "eir",
+        test2_8: "o",
+        test2_9: "ver",
+        test2_10: "sts",
+        test2_11: "king",
+        test2_12: "vide",
+        test2_13: "tra",
+        test2_14: "t",
+        test2_15: "so",
+        test2_16: "icult",
+        test2_17: "ance",
+        test2_18: "he",
+        test2_19: "f",
+        test2_20: "ll",
+        test2_21: "ad",
+        test2_22: "king",
+        test2_23: "urs",
+        test2_24: "ve",
+        test2_25: "tive",
+        test3_1: "p",
+        test3_2: "ning",
+        test3_3: "wn",
+        test3_4: "an",
+        test3_5: "n",
+        test3_6: "om",
+        test3_7: "onous",
+        test3_8: "nd",
+        test3_9: "ou",
+        test3_10: "edom",
+        test3_11: "rk",
+        test3_12: "thing",
+        test3_13: "re",
+        test3_14: "onate",
+        test3_15: "ever",
+        test3_16: "so",
+        test3_17: "th",
+        test3_18: "wn",
+        test3_19: "f",
+        test3_20: "uding",
+        test3_21: "tainty",
+        test3_22: "he",
+        test3_23: "ibility",
+        test3_24: "ing",
+        test3_25: "wn",
+        test4_1: "ap",
+        test4_2: "an",
+        test4_3: "od",
+        test4_4: "o",
+        test4_5: "nd",
+        test4_6: "ore",
+        test4_7: "o",
+        test4_8: "ing",
+        test4_9: "me",
+        test4_10: "an",
+        test4_11: "vel",
+        test4_12: "sue",
+        test4_13: "rests",
+        test4_14: "ing",
+        test4_15: "sure",
+        test4_16: "nments",
+        test4_17: "ams",
+        test4_18: "an",
+        test4_19: "em",
+        test4_20: "in",
+        test4_21: "ew",
+        test4_22: "nd",
+        test4_23: "o",
+        test4_24: "dies",
+        test4_25: "ewed"
+
+};
+
+    function normaliseAnswer(value) {
+        return value.trim().toLowerCase();
+    }
+
+    function checkAnswers() {
+        let correctCount = 0;
+        let total = 0;
+
+        for (const key in answers) {
+            const input = document.getElementById(key);
+            if (!input) continue;
+
+            const userValue = normaliseAnswer(input.value);
+            const correctValue = answers[key];
+            let isCorrect = false;
+
+            if (Array.isArray(correctValue)) {
+                isCorrect = correctValue.map(normaliseAnswer).includes(userValue);
+            } else {
+                isCorrect = userValue === normaliseAnswer(correctValue);
+            }
+
+            input.classList.remove("correct", "incorrect");
+            if (isCorrect) {
+                input.classList.add("correct");
+                correctCount++;
+            } else {
+                input.classList.add("incorrect");
+            }
+
+            total++;
+        }
+
+        document.getElementById("score").innerText = `Score: ${correctCount} / ${total}`;
+    }
+
+    function seeAnswers() {
+        for (const key in answers) {
+            const input = document.getElementById(key);
+            if (!input) continue;
+
+            const correctValue = Array.isArray(answers[key]) ? answers[key][0] : answers[key];
+            input.value = correctValue;
+            input.classList.remove("incorrect");
+            input.classList.add("correct");
+        }
+    }
+</script>
+
+
+<script>
+let timer;
+let duration = 20 * 60; // 20 minutes in seconds
+
+function startTimer() {
+    let timeRemaining = duration;
+    const display = document.getElementById("timer-display");
+
+    if (timer) clearInterval(timer); // prevent multiple intervals
+
+    timer = setInterval(() => {
+        const minutes = Math.floor(timeRemaining / 60);
+        const seconds = timeRemaining % 60;
+
+        display.textContent =
+            minutes.toString().padStart(2, '0') + ":" +
+            seconds.toString().padStart(2, '0');
+
+        if (--timeRemaining < 0) {
+            clearInterval(timer);
+            display.classList.add("expired");
+            display.textContent = "Time's up!";
+        }
+    }, 1000);
+}
+
+document.getElementById("start-timer").addEventListener("click", startTimer);
+</script>
+
+</body>
+</html>
